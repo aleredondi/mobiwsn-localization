@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/light
+END
+LightSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/light/LightSensor.java
+END
+LightRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/light/LightRemoteSensor.java
+END
+LightInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/light/LightInternalSensor.java
+END

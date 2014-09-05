@@ -1,0 +1,71 @@
+# Resources for the MobiWSNConsoleView class
+
+# top-level menus
+
+fileMenu.text = File
+helpMenu.text = Help
+
+# @Action resources
+
+showAboutBox.Action.text = &About...
+showAboutBox.Action.shortDescription = Show the application's information dialog
+
+# status bar resources
+
+StatusBar.messageTimeout = 5000
+StatusBar.busyAnimationRate = 30
+StatusBar.idleIcon = busyicons/idle-icon.png
+StatusBar.busyIcons[0]  = busyicons/busy-icon0.png
+StatusBar.busyIcons[1]  = busyicons/busy-icon1.png
+StatusBar.busyIcons[2]  = busyicons/busy-icon2.png
+StatusBar.busyIcons[3]  = busyicons/busy-icon3.png
+StatusBar.busyIcons[4]  = busyicons/busy-icon4.png
+StatusBar.busyIcons[5]  = busyicons/busy-icon5.png
+StatusBar.busyIcons[6]  = busyicons/busy-icon6.png
+StatusBar.busyIcons[7]  = busyicons/busy-icon7.png
+StatusBar.busyIcons[8]  = busyicons/busy-icon8.png
+StatusBar.busyIcons[9]  = busyicons/busy-icon9.png
+StatusBar.busyIcons[10] = busyicons/busy-icon10.png
+StatusBar.busyIcons[11] = busyicons/busy-icon11.png
+StatusBar.busyIcons[12] = busyicons/busy-icon12.png
+StatusBar.busyIcons[13] = busyicons/busy-icon13.png
+StatusBar.busyIcons[14] = busyicons/busy-icon14.png
+btnRefreshList.text=Refresh List
+btnConnect.text=Connect
+btnDisconnect.text=Disconnect
+lblGateway.text=WSNGatewayManager URL:
+txtGatewayURL.text=//127.0.0.1/GatewayManager-LAURA
+lblMoteID.text=Mote ID:
+lblMoteIDValue.text=aa
+#NOI18N
+lblMoteIDValue.background=200, 179, 158
+lblNwkAddrValue.text=aa
+lblMACAddrValue.text=aa
+lblParentIDValue.text=aa
+btnRead.text=Read Sensor
+#NOI18N
+btnConnect.font=DejaVu Sans-Plain-12
+#NOI18N
+btnRead.font=DejaVu Sans-Plain-12
+#NOI18N
+lblMoteID.font=DejaVu Sans-Plain-12
+jTable1.columnModel.title3=Title 4
+btnRefreshMote.text=Refresh Data
+btnStopGateway.text=Stop Gateway
+btnStartGateway.text=Start Gateway
+lblNwkAddr.text=Network Address: 
+lblMacAddress.text=MAC Address: 
+lblParentMoteId.text=Parent Mote ID:
+lblIsPANCoord.text=Is PAN Coordinator:
+lblIsReachable.text=Is Reachable:
+lblIsPanCoordinatorValue.text=aa
+lblIsReachableValue.text=aa
+lblMoteInformation.text=Mote Information
+#NOI18N
+lblMoteInformation.font=DejaVu Sans-Bold-12
+lblSensorInformation.text=Sensor Information
+#NOI18N
+lblSensorInformation.font=DejaVu Sans-Bold-12
+tblSensors.columnModel.title0=Sensor ID
+tblSensors.columnModel.title1=Sensor Type
+tblSensors.columnModel.title2=Sensor Value

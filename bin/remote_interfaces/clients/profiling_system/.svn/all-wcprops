@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/remote_interfaces/clients/profiling_system
+END
+Profile.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/remote_interfaces/clients/profiling_system/Profile.java
+END
+ProfileType.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/remote_interfaces/clients/profiling_system/ProfileType.java
+END
+ProfilingSystemException.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/remote_interfaces/clients/profiling_system/ProfilingSystemException.java
+END
+ProfilingSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/remote_interfaces/clients/profiling_system/ProfilingSystem.java
+END

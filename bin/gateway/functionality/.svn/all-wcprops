@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality
+END
+GenericRemotePublisherFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/GenericRemotePublisherFunctionality.java
+END
+FunctionalityFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/FunctionalityFactory.java
+END
+GenericInternalPublisherFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/GenericInternalPublisherFunctionality.java
+END
+GenericRemoteFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/GenericRemoteFunctionality.java
+END
+GenericInternalFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/GenericInternalFunctionality.java
+END
+InternalFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/InternalFunctionality.java
+END
+FunctionalityCommandType.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/FunctionalityCommandType.java
+END
+FunctionalityCommandMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/FunctionalityCommandMessage.java
+END

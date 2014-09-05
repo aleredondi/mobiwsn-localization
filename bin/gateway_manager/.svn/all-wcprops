@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway_manager
+END
+ClassManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway_manager/ClassManager.java
+END
+WSNGatewayManagerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway_manager/WSNGatewayManagerImpl.java
+END
+WSNGatewayManagerMain.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway_manager/WSNGatewayManagerMain.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/scripts_&_lib/gateway
+END
+tinyos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/scripts_&_lib/gateway/tinyos.jar
+END
+wsngateway_startup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/scripts_&_lib/gateway/wsngateway_startup.sh
+END
+jsr-275-1.0-beta-2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/scripts_&_lib/gateway/jsr-275-1.0-beta-2.jar
+END

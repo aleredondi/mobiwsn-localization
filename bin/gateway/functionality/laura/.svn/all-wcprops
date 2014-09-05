@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/laura
+END
+Status.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/mobiWSN/!svn/ver/303/branches/laura/codice_java/src/gateway/functionality/laura/Status.java
+END
+LauraMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/laura/LauraMessage.java
+END
+LauraRemoteFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/laura/LauraRemoteFunctionality.java
+END
+LauraInternalFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/laura/LauraInternalFunctionality.java
+END

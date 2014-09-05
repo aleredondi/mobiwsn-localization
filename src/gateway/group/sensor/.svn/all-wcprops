@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/sensor
+END
+InternalSensorGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/sensor/InternalSensorGroup.java
+END
+RemoteSensorGroupImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/sensor/RemoteSensorGroupImpl.java
+END
+InternalSensorGroupImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/sensor/InternalSensorGroupImpl.java
+END

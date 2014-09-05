@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor
+END
+SensorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/SensorFactory.java
+END
+GenericRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/GenericRemoteSensor.java
+END
+GenericInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/GenericInternalSensor.java
+END
+InternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/InternalSensor.java
+END

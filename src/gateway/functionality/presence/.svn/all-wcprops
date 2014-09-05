@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/presence
+END
+PresenceMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/presence/PresenceMessage.java
+END
+PresenceRemoteFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/presence/PresenceRemoteFunctionality.java
+END
+PresenceInternalFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/presence/PresenceInternalFunctionality.java
+END

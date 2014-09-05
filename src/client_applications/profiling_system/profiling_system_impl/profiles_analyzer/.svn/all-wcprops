@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/profiling_system/profiling_system_impl/profiles_analyzer
+END
+ProfilesAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/profiling_system/profiling_system_impl/profiles_analyzer/ProfilesAnalyzer.java
+END
+RoomLocalDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/profiling_system/profiling_system_impl/profiles_analyzer/RoomLocalDB.java
+END
+doubleDailyProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/profiling_system/profiling_system_impl/profiles_analyzer/doubleDailyProfile.java
+END
+intDailyProfile.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/profiling_system/profiling_system_impl/profiles_analyzer/intDailyProfile.java
+END

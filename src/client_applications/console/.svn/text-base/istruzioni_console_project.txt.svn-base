@@ -1,0 +1,14 @@
+
+All'interno della catella /console_project si trova un file jar console.jar con i binari compressi che si possono usare per lanciare il client
+
+P.S: per lanciare il client traite il file jar basta editare il comando (dalla directory /console_project in cui è presente il file):
+
+        java -jar "console.jar"
+
+
+OSS:
+  1  Bisogna cambiare l'URI che identifica l'oggetto remoto WSNGatewayManager definita in /console_project/src/mobiwsnconsole/resources/MobiWSNConsoleView.properties,
+     in particolare txtGatewayURL.text;
+
+  2  Per importare il progetto in eclipse risulterà necessario cambiare il path delle quattro librerie jar
+     (in /console_project/lib).

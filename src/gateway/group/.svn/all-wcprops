@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group
+END
+GroupIdManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/GroupIdManager.java
+END
+GenericRemoteGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/GenericRemoteGroup.java
+END
+GenericInternalGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/GenericInternalGroup.java
+END
+GenericRemoteGroupable.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/GenericRemoteGroupable.java
+END
+InternalGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/InternalGroup.java
+END
+GenericInternalGroupable.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/GenericInternalGroupable.java
+END
+InternalGroupable.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/InternalGroupable.java
+END

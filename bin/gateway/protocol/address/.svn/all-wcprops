@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/address
+END
+NetworkAddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/address/NetworkAddressImpl.java
+END
+InternalNetworkAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/address/InternalNetworkAddress.java
+END
+RemoteNetworkAddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/address/RemoteNetworkAddressImpl.java
+END
+InternalNetworkAddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/address/InternalNetworkAddressImpl.java
+END

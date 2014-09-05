@@ -1,0 +1,28 @@
+package gateway.functionality.laura;
+
+
+
+public enum Status {
+	  FACE_DOWN, 
+	  FACE_UP, 
+	  STANDUP, 
+	  FLIPPED,
+	  MOVING,
+	  POSSIBLE_FALL,
+	  CHECK_FALL, 
+	  FALL_RECOVERED,
+	  FALL_ALARM, 
+	  NO_CLASSIFICATION;
+	  
+		public static Status convert(int i)
+		{
+			try 
+			{
+				return values()[i];
+			} 
+			catch ( ArrayIndexOutOfBoundsException e ) 
+			{
+				return NO_CLASSIFICATION;
+			}
+		}
+}

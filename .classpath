@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/Jama.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jcommon-1.0.16.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jfreechart-1.0.13.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jgraph.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jsr-275-1.0-beta-2.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/swing-layout-1.0.3.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/gateway/tinyos.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

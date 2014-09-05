@@ -1,0 +1,34 @@
+
+Per ogni client è necessario importare le librerie jar racchise nell'apposita cartella in /scripts_&_lib
+
+---------------------------------
+
+Per console:
+
+  bisogna cambiare l'URI che identifica l'oggetto remoto WSNGatewayManager definita in /console/resources/MobiWSNConsoleView.properties,
+  in particolare txtGatewayURL.text, di default è impostato il localhost: //127.0.0.1/GatewayManager-pippo
+
+  per la ricezione dei messaggi delle funzionalità si utilizza un'interfaccia RMI e quindi bisogna passargli il codebase e dell'hostname:
+
+    VM arguments: -Djava.rmi.server.hostname=127.0.0.1
+
+---------------------------------
+
+Per parking:
+
+  in param arguments bisogna inserire l'indirizzo del manager e poi quello locale, per esempio (impostando il localhost):
+
+    Program arguments: 127.0.0.1 127.0.0.1
+  
+---------------------------------
+
+Per tracking:
+
+  oltre all'indirizzo del manager e quello locale, utilizzando un'interfaccia RMI necessita anche del codebase e dell'hostname, per esempio:
+
+    Program arguments: 127.0.0.1 127.0.0.1
+    VM arguments: -Djava.rmi.server.codebase=file:<path>/<workspacefolder>/bin/ -Djava.rmi.server.hostname=127.0.0.1
+
+
+OSS: ATTUALMENTE FUNZIONA SOLO IL CLIENT CONSOLE, INFATTI GLI ALTRI DUE DEVONO ANCORA ESSERE AGGIORNATI
+     (insieme alla proprietà del middleware di caricamento delle classi).

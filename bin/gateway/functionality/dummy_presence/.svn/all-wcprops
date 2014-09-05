@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/dummy_presence
+END
+DummyPresenceMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/dummy_presence/DummyPresenceMessage.java
+END
+DummyPresenceRemoteFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/functionality/dummy_presence/DummyPresenceRemoteFunctionality.java
+END
+DummyPresenceInternalFunctionality.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/functionality/dummy_presence/DummyPresenceInternalFunctionality.java
+END
