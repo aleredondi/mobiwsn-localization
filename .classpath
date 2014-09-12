@@ -8,10 +8,18 @@
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jcommon-1.0.16.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jfreechart-1.0.13.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jgraph.jar"/>
-	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/jsr-275-1.0-beta-2.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/console/swing-worker-1.1.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/gateway/tinyos.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/fluent-hc-4.3.5.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/httpclient-4.3.5.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/httpclient-cache-4.3.5.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/httpcore-4.3.2.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/httpmime-4.3.5.jar"/>
+	<classpathentry kind="lib" path="/home/greeneyes/Scrivania/Localization/workspace/mobiWSN_localization/src/scripts_&amp;_lib/gateway/jsr-275-1.0-beta-2.jar"/>
+	<classpathentry kind="lib" path="/home/greeneyes/Scrivania/Localization/workspace/mobiWSN_localization/src/scripts_&amp;_lib/client_applications/localization/org.json-20120521.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

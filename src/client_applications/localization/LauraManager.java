@@ -3,6 +3,7 @@ package client_applications.localization;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,6 +36,9 @@ import javax.measure.quantity.Temperature;
 import javax.measure.unit.SI;
 import javax.swing.JFrame;
 
+import org.apache.http.ParseException;
+import org.json.JSONException;
+
 public class LauraManager implements Runnable{
 	
 	static LauraManager me;
@@ -44,6 +48,10 @@ public class LauraManager implements Runnable{
 	static LauraMainWindow lmw_main;
 	static MobileManager mobile_manager;
 	static AnchorManager anchor_manager;
+	
+	//GT DEMO
+	static G2CInterface g2c_interface;
+	//
 	
 	FunctionalitySubscriber f_sub;
 	TopologySubscriber t_sub;
@@ -58,7 +66,7 @@ public class LauraManager implements Runnable{
 	public static ArrayList<AnchorNode> anchor_list = new ArrayList<AnchorNode>(); //lista delle ancore
 	
 	//GT DEMO
-	public static ArrayList<AccessPoint> access_points_list = new ArrayList<AccessPoint>();
+	public ArrayList<AccessPoint> access_points_list; 
 	//
 	
 	Random rgen = new Random();
@@ -120,6 +128,11 @@ public class LauraManager implements Runnable{
 		try {
 			f_sub = new FunctionalitySubscriber(this);
 			t_sub = new TopologySubscriber(this);
+			
+	     	// GT DEMO
+	     	g2c_interface = new G2CInterface("http://127.0.0.1:6680");
+	     	//
+			
 			System.out.println("@vigilo@: Connect to RMI: 127.0.0.1");//args[0]);
 			connectToRmi("127.0.0.1"); //args[0]
 			lmw_main = new LauraMainWindow(this,anchor_list,mobile_list,access_points_list);
@@ -130,7 +143,9 @@ public class LauraManager implements Runnable{
 	     	
 	     	mobile_manager = new MobileManager(mobile_list,lmw_main);
 	     	anchor_manager = new AnchorManager(anchor_list,lmw_main);
+	     	
 
+	     	
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -165,10 +180,18 @@ public class LauraManager implements Runnable{
 			Naming.rebind("//127.0.0.1/ClientManager", rmiObject);*/
         
         	//GT DEMO: READ FROM CONFIGURATION FILE HERE!!!!
-        	for(int i=1;i<=3;i++){
-        		AccessPoint ap = new AccessPoint(Integer.toString(i),"AA:BB:CC:DD:EE:FF","127.0.0.1",0,0,true);
-        		access_points_list.add(ap);
-        	}
+        	try {
+				access_points_list = g2c_interface.getAccessPoints();
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (JSONException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 //        	MobileNode mobile_prova = new MobileNode("MICAZM15",10,10,param,true,true);
 //			mobile_list.add(mobile_prova);

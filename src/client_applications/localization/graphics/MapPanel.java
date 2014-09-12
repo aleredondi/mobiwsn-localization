@@ -230,7 +230,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 				}
 				g.setColor(access_points_list.get(i).getColor());
 				g.fillOval(X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2, Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM) -dim/2, dim, dim);
-				g.drawString(Integer.toString(access_points_list.get(i).getMac()),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM));
+				g.drawString(access_points_list.get(i).getId(),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM));
 			}
 		}
 		//
