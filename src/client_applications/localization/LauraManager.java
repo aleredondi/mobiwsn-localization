@@ -193,75 +193,75 @@ public class LauraManager implements Runnable{
 				e1.printStackTrace();
 			}
 			
-//        	MobileNode mobile_prova = new MobileNode("MICAZM15",10,10,param,true,true);
-//			mobile_list.add(mobile_prova);
-//			
-//        for(int i=1;i<=14;i++){
-//        	AnchorNode anchor_prova = new AnchorNode(Integer.toString(i),0,0,true);
-//        	switch(i){
-//        	case 1:
-//        		anchor_prova.setX(26.5);
-//        		anchor_prova.setY(9);
-//        		break;
-//        	case 2:
-//        		anchor_prova.setX(25.3);
-//        		anchor_prova.setY(5.5);
-//        		break;
-//        	case 3:
-//        		anchor_prova.setX(19.5);
-//        		anchor_prova.setY(5.5);
-//        		break;
-//        	case 4:
-//        		anchor_prova.setX(18.3);
-//        		anchor_prova.setY(8.8);
-//        		break;
-//        	case 5:
-//        		anchor_prova.setX(14.6);
-//        		anchor_prova.setY(5.5);
-//        		break;
-//        	case 6:
-//        		anchor_prova.setX(12);
-//        		anchor_prova.setY(3.95);
-//        		break;
-//        	case 7:
-//        		anchor_prova.setX(6.5);
-//        		anchor_prova.setY(9);
-//        		break;
-//        	case 8:
-//        		anchor_prova.setX(0.5);
-//        		anchor_prova.setY(3.8);
-//        		break;
-//        	case 9:
-//        		anchor_prova.setX(0.5);
-//        		anchor_prova.setY(14.5);
-//        		break;
-//        	case 10:
-//        		anchor_prova.setX(0.5);
-//        		anchor_prova.setY(22.5);
-//        		break;
-//        	case 11: 
-//        		anchor_prova.setX(6.5);
-//        		anchor_prova.setY(19.5);
-//        		break;
-//        	case 12:
-//        		anchor_prova.setX(14);
-//        		anchor_prova.setY(22.5);
-//        		break;
-//        	case 13:
-//        		anchor_prova.setX(17.5);
-//        		anchor_prova.setY(19.5);
-//        		break;
-//        	case 14:
-//        		anchor_prova.setX(23.5);
-//        		anchor_prova.setY(24);
-//        		break;
-//        	case 15:
-//        		anchor_prova.setX(27);
-//        		anchor_prova.setY(20.5);
-//        		break;
-//        	}
-//        	anchor_list.add(anchor_prova);
-//        }
+        	MobileNode mobile_prova = new MobileNode("MICAZM15",10,10,param,true,true);
+			mobile_list.add(mobile_prova);
+			
+        for(int i=1;i<=14;i++){
+        	AnchorNode anchor_prova = new AnchorNode(Integer.toString(i),0,0,true);
+        	switch(i){
+        	case 1:
+        		anchor_prova.setX(26.5);
+        		anchor_prova.setY(9);
+        		break;
+        	case 2:
+        		anchor_prova.setX(25.3);
+        		anchor_prova.setY(5.5);
+        		break;
+        	case 3:
+        		anchor_prova.setX(19.5);
+        		anchor_prova.setY(5.5);
+        		break;
+        	case 4:
+        		anchor_prova.setX(18.3);
+        		anchor_prova.setY(8.8);
+        		break;
+        	case 5:
+        		anchor_prova.setX(14.6);
+        		anchor_prova.setY(5.5);
+        		break;
+        	case 6:
+        		anchor_prova.setX(12);
+        		anchor_prova.setY(3.95);
+        		break;
+        	case 7:
+        		anchor_prova.setX(6.5);
+        		anchor_prova.setY(9);
+        		break;
+        	case 8:
+        		anchor_prova.setX(0.5);
+        		anchor_prova.setY(3.8);
+        		break;
+        	case 9:
+        		anchor_prova.setX(0.5);
+        		anchor_prova.setY(14.5);
+        		break;
+        	case 10:
+        		anchor_prova.setX(0.5);
+        		anchor_prova.setY(22.5);
+        		break;
+        	case 11: 
+        		anchor_prova.setX(6.5);
+        		anchor_prova.setY(19.5);
+        		break;
+        	case 12:
+        		anchor_prova.setX(14);
+        		anchor_prova.setY(22.5);
+        		break;
+        	case 13:
+        		anchor_prova.setX(17.5);
+        		anchor_prova.setY(19.5);
+        		break;
+        	case 14:
+        		anchor_prova.setX(23.5);
+        		anchor_prova.setY(24);
+        		break;
+        	case 15:
+        		anchor_prova.setX(27);
+        		anchor_prova.setY(20.5);
+        		break;
+        	}
+        	anchor_list.add(anchor_prova);
+        }
         
 			
 			try {

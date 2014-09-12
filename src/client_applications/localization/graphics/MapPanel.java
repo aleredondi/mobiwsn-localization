@@ -68,7 +68,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 	private boolean segment_ready = false;
 	private boolean locked_to_track = false;
 	private Image rule_texture;
-	private BufferedImage map_image;
+	private BufferedImage map_image, ap_icon_on, ap_icon_off;
 	private Track track;
 
 
@@ -131,6 +131,12 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 			filename = "/client_applications/localization/graphics/laura-def.jpg";
 			url = getClass().getResource(filename);
 			map_image = ImageIO.read(url);
+			filename = "/client_applications/localization/graphics/ap_icon_on.png";
+			url = getClass().getResource(filename);
+			ap_icon_on = ImageIO.read(url);
+			filename = "/client_applications/localization/graphics/ap_icon_off.png";
+			url = getClass().getResource(filename);
+			ap_icon_off = ImageIO.read(url);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -224,13 +230,19 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 		//draw access points if enabled
 		if(this.drawingAccessPoints){
 			for(int i=0; i<access_points_list.size();i++){
-				int dim = 7;
+				int dim = 20;
 				if(access_points_list.get(i)==lmw.selected_node){
-					dim = 12;
+					dim = 25;
 				}
-				g.setColor(access_points_list.get(i).getColor());
+				/*g.setColor(access_points_list.get(i).getColor());
 				g.fillOval(X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2, Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM) -dim/2, dim, dim);
-				g.drawString(access_points_list.get(i).getId(),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM));
+				g.drawString(access_points_list.get(i).getId(),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM));*/
+				//GT DEMO
+				if(access_points_list.get(i).isIs_reachable())
+					g.drawImage(ap_icon_on,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM)- dim/2,dim,dim,this);
+				else
+					g.drawImage(ap_icon_off,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM)- dim/2,dim,dim,this);
+					
 			}
 		}
 		//
