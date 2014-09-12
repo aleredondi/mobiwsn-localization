@@ -55,7 +55,12 @@ public class LauraManager implements Runnable{
 	//laura variables
 	private RssiMatrix S = new RssiMatrix(); //matrice degli rssi
 	public static ArrayList<MobileNode> mobile_list = new ArrayList<MobileNode>(); //lista dei nodi mobili 
-	public static ArrayList<AnchorNode> anchor_list = new ArrayList<AnchorNode>(); //lista delle ancore 
+	public static ArrayList<AnchorNode> anchor_list = new ArrayList<AnchorNode>(); //lista delle ancore
+	
+	//GT DEMO
+	public static ArrayList<AccessPoint> access_points_list = new ArrayList<AccessPoint>();
+	//
+	
 	Random rgen = new Random();
 	//constant
 	private static double SELF_DISTANCE = 0.04;
@@ -117,7 +122,7 @@ public class LauraManager implements Runnable{
 			t_sub = new TopologySubscriber(this);
 			System.out.println("@vigilo@: Connect to RMI: 127.0.0.1");//args[0]);
 			connectToRmi("127.0.0.1"); //args[0]
-			lmw_main = new LauraMainWindow(this,anchor_list,mobile_list);
+			lmw_main = new LauraMainWindow(this,anchor_list,mobile_list,access_points_list);
 			lmw_main.setVisible(true);
 	    	lmw_main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    	lmw_main.pack();                        
@@ -158,6 +163,12 @@ public class LauraManager implements Runnable{
 			//      args[1] = manager_ip;
 			//      facendo poi la rebind con l'ip del client (my_ip).
 			Naming.rebind("//127.0.0.1/ClientManager", rmiObject);*/
+        
+        	//GT DEMO: READ FROM CONFIGURATION FILE HERE!!!!
+        	for(int i=1;i<=3;i++){
+        		AccessPoint ap = new AccessPoint(Integer.toString(i),"AA:BB:CC:DD:EE:FF","127.0.0.1",0,0,true);
+        		access_points_list.add(ap);
+        	}
 			
 //        	MobileNode mobile_prova = new MobileNode("MICAZM15",10,10,param,true,true);
 //			mobile_list.add(mobile_prova);

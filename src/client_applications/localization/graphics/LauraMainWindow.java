@@ -18,6 +18,8 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	LauraManager main_app;
 	ArrayList<MobileNode> mobile_list;
 	ArrayList<AnchorNode> anchor_list;
+	//GT DEMO
+	ArrayList<AccessPoint> access_points_list;
 	LauraNode selected_node = null;
 	
 	//qua passerei i puntatori alle strutture dati dei nodi per disegnarli
@@ -27,6 +29,9 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	JCheckBoxMenuItem showParamMenuItem;
 	JCheckBoxMenuItem adParamMenuItem;
 	JCheckBoxMenuItem showAnchorsMenuItem ;
+	// GT DEMO
+	JCheckBoxMenuItem showAccessPointsMenuItem;
+	//
 	JCheckBoxMenuItem showPatientNameMenuItem;
 	JCheckBoxMenuItem showPatientRulesMenuItem;
 	JCheckBoxMenuItem showWallsMenuItem;
@@ -35,18 +40,20 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	JCheckBoxMenuItem showTrackMenuItem;
 	
 
-	public LauraMainWindow(LauraManager main_app, ArrayList<AnchorNode> anchor_list, ArrayList<MobileNode> mobile_list){
+	public LauraMainWindow(LauraManager main_app, ArrayList<AnchorNode> anchor_list, ArrayList<MobileNode> mobile_list, ArrayList<AccessPoint> access_points_list){
 		
 		
 		this.main_app = main_app;
 		this.anchor_list = anchor_list;
 		this.mobile_list = mobile_list;
-		//this.setTitle("LAURA - LocAlization and Ubiquitous monitoRing of pAtients for health care support");
-		this.setTitle("Vigilo - Indoor Localization System");
-		map_panel =  new MapPanel(anchor_list, mobile_list, this);
+		//GT DEMO
+		this.access_points_list = access_points_list;
+		//
+		this.setTitle("GreenTouch DEMO");
+		map_panel =  new MapPanel(anchor_list, mobile_list, access_points_list, this);
 		
 		//pannello comandi
-		quick_panel = new QuickPanel(anchor_list, mobile_list, this);
+		quick_panel = new QuickPanel(anchor_list, mobile_list, access_points_list, this);
 		
 		
 		////////////////////////////////////////////////////////
@@ -88,8 +95,6 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		tracksMenu.add(enableTrackMenuItem);
 		
 		
-		
-		
 		//VIEW
 		JMenu viewMenu = new JMenu("View");
 		viewMenu.setMnemonic(KeyEvent.VK_V);
@@ -127,6 +132,13 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		showAnchorsMenuItem = new JCheckBoxMenuItem("Show Anchors");
 		showAnchorsMenuItem.addActionListener(menuListener);
 		viewMenu.add(showAnchorsMenuItem);
+		
+		//GT DEMO
+		//View - show MobiMesh AP
+		showAccessPointsMenuItem = new JCheckBoxMenuItem("Show Access Points");
+		showAccessPointsMenuItem.addActionListener(menuListener);
+		viewMenu.add(showAccessPointsMenuItem);
+		//
 		
 		//View - show walls
 		showWallsMenuItem = new JCheckBoxMenuItem("Show Walls");
@@ -167,6 +179,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		}
 	}
 	
+	
 	public void selectRule(String rule){
 		quick_panel.selectRule(rule);
 	}
@@ -188,6 +201,16 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		    	}
 		    	else map_panel.setDrawingAnchors(true);
 		    }
+		    
+		    //GT DEMO
+		    //show access points
+		    if(actionEvent.getActionCommand() == "Show Access Points"){
+		    	if(map_panel.isDrawingAccessPoints()){
+		    		map_panel.setDrawingAccessPoints(false);
+		    	}
+		    	else map_panel.setDrawingAccessPoints(true);
+		    }
+		    //
 		    
 		    //visualizza pannello comandi
 		    if(actionEvent.getActionCommand() == "Show Quick Panel"){
@@ -270,8 +293,12 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	public void setPositioningAnchors(boolean b){
 		map_panel.setPositioningAnchors(b);
 	}
-
-
+	
+	//GT DEMO
+	public void setPositioningAccessPoints(boolean b){
+		map_panel.setPositioningAccessPoints(b);
+	}
+	//
 
 	public void updateRulesCombo() {
 		quick_panel.updateRulesCombo();	
@@ -287,8 +314,14 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	public void setAnchorsPanelMenuSelected(boolean b) {
 		showAnchorsMenuItem.setSelected(b);
 		map_panel.setDrawingAnchors(b);
-		
 	}
+	
+	//GT DEMO
+	public void setAccessPointsPanelMenuSelected(boolean b){
+		showAccessPointsMenuItem.setSelected(b);
+		map_panel.setDrawingAccessPoints(b);
+	}
+	//
 
 
 	public void updateNodesCombo() {
@@ -368,6 +401,8 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	{
 		main_app.printAnchorPosition(anchor);
 	}	
+	
+
 	
 
 }
