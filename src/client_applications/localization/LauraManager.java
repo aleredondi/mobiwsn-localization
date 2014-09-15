@@ -144,6 +144,9 @@ public class LauraManager implements Runnable{
 	     	mobile_manager = new MobileManager(mobile_list,lmw_main);
 	     	anchor_manager = new AnchorManager(anchor_list,lmw_main);
 	     	
+	     	//GT DEMO
+	     	g2c_interface.startAPChecker(1000, access_points_list, lmw_main);
+	     	//
 
 	     	
 		} catch (RemoteException e) {

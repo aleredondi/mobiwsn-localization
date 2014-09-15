@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.apache.http.*;
 import org.apache.http.client.*;
@@ -15,10 +17,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.*;
 
+import client_applications.localization.graphics.LauraMainWindow;
+
 @SuppressWarnings("deprecation")
 public class G2CInterface {
 	private HttpClient client;
 	private String base_url;
+	APChecker ap_checker;
 
 	public G2CInterface(String url){
 		client = new DefaultHttpClient();
@@ -27,6 +32,34 @@ public class G2CInterface {
 
 	public void setAPIBaseUrl(String url){
 		this.base_url = url;
+	}
+	
+	public void updateAccessPointsStatus(ArrayList<AccessPoint> access_points) throws ClientProtocolException, IOException, JSONException{
+		
+		HttpGet request = new HttpGet(base_url + "/api/accesspoint");
+		HttpResponse response = client.execute(request);
+		String json = EntityUtils.toString(response.getEntity());
+		JSONArray aps;
+		aps = new JSONArray(json);
+		
+		for(int i=0;i<aps.length();i++){
+			request = new HttpGet(base_url + aps.getString(i));
+			response = client.execute(request);
+			json = EntityUtils.toString(response.getEntity());
+			JSONObject ap = new JSONObject(json);
+
+			boolean reachable;
+			if(ap.getInt("power_state")==0)
+				reachable = false;
+			else
+				reachable = true;
+			
+			//look into the access_point vector and update the state
+			for(int j=0;j<access_points.size();j++){
+				if(access_points.get(j).getId()==ap.getString("device_id"))
+					access_points.get(j).setIs_reachable(reachable);
+			}
+		}
 	}
 	
 	
@@ -82,6 +115,39 @@ public class G2CInterface {
 		post.setEntity(input);
 		HttpResponse response = client.execute(post);
 
+	}
+
+	public void startAPChecker(long period, ArrayList<AccessPoint> access_points_list, LauraMainWindow lmw){
+		 ap_checker = new APChecker(period,access_points_list,lmw);
+	}
+	
+public final class APChecker extends TimerTask{
+	
+		ArrayList<AccessPoint> access_points_list;
+		LauraMainWindow lmw;
+		
+		public APChecker(long period, ArrayList<AccessPoint> access_points_list, LauraMainWindow lmw){
+			Timer timer = new Timer();
+			timer.schedule(this, 1000, period);
+			this.access_points_list = access_points_list;
+			this.lmw = lmw;
+		}
+		
+		public void run() {
+			try {
+				updateAccessPointsStatus(access_points_list);
+			} catch (ClientProtocolException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			lmw.repaint();
+		}
 	}
 
 }
