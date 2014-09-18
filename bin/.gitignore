@@ -1,0 +1,12 @@
+/scripts_&_lib/
+/gateway/
+/gateway_manager/
+/istruzioni_mobiWSN.txt
+/myjava.policy
+/remote_interfaces/
+/client_applications/
+/common/
+/.svn/
+/MANIFEST.MF
+/README.txt
+*.class
