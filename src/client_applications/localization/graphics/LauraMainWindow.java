@@ -377,6 +377,11 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	public void updateAnchorTemperature(){
 		quick_panel.updateAnchorTemperature();
 	}
+	
+	public void updatePowerMeterPanel(){
+		if(pm_panel != null)
+			pm_panel.update();
+	}
 
 	@Override
 	public void componentHidden(ComponentEvent e) {

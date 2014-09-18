@@ -147,6 +147,7 @@ public final class APChecker extends TimerTask{
 				e.printStackTrace();
 			}
 			lmw.repaint();
+			lmw.updatePowerMeterPanel();
 		}
 	}
 

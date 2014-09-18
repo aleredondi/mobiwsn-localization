@@ -49,41 +49,50 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 			LauraMainWindow lmw) {
 		this.ap_list = access_points_list;
 		this.lmw = lmw;
-		
+
 		// create char panel and add it to frame
 		JPanel cp = setupChartPanel();
 		setContentPane(cp);
 		// set fixed size
 		this.setSize(280, 300);
 	}
-	
-	public void updateMeterValue(double val) 
-	{
+
+	public void update() {
+		// TODO: implement real power consumption colculation
+		this.updateMeterValue(Math.random() * 99);
+		System.out.println("Power Meter update.");
+	}
+
+	private void updateMeterValue(double val) {
 		this.powerConsumtionDataset.setValue(val);
 	}
-	
+
 	public boolean isAttached() {
 		return is_attached;
 	}
 
 	public void setAttached(boolean b) {
 		is_attached = b;
-		if(is_attached){
-			//this.setLocationRelativeTo(lmw);
-			//this.setLocation(lmw.getBounds().x + lmw.getWidth(),lmw.getBounds().y);
-			this.setLocation(lmw.getBounds().x - this.getWidth(),lmw.getBounds().y);
+		if (is_attached) {
+			// this.setLocationRelativeTo(lmw);
+			// this.setLocation(lmw.getBounds().x +
+			// lmw.getWidth(),lmw.getBounds().y);
+			this.setLocation(lmw.getBounds().x - this.getWidth(),
+					lmw.getBounds().y);
 		}
 	}
 
 	private JFreeChart setupDialChart(String title, String inner_title,
-			ValueDataset valuedataset, double lower_bound, double upper_bound, double tick_increment, int minor_tick_count) {
+			ValueDataset valuedataset, double lower_bound, double upper_bound,
+			double tick_increment, int minor_tick_count) {
 		// general
 		DialPlot dialplot = new DialPlot();
 		dialplot.setDataset(valuedataset);
 		dialplot.setDialFrame(new StandardDialFrame());
 		dialplot.setBackground(new DialBackground());
 		// description: Watt (W)
-		DialTextAnnotation dialtextannotation = new DialTextAnnotation(inner_title);
+		DialTextAnnotation dialtextannotation = new DialTextAnnotation(
+				inner_title);
 		dialtextannotation.setFont(new Font("Dialog", 1, 14));
 		dialtextannotation.setRadius(0.7D);
 		dialplot.addLayer(dialtextannotation);
@@ -92,8 +101,8 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 		dialvalueindicator.setOutlinePaint(Color.black);
 		dialplot.addLayer(dialvalueindicator);
 		// ticks
-		StandardDialScale standarddialscale = new StandardDialScale(lower_bound, upper_bound,
-				-120D, -300D, 10D, 4);
+		StandardDialScale standarddialscale = new StandardDialScale(
+				lower_bound, upper_bound, -120D, -300D, 10D, 4);
 		standarddialscale.setMajorTickIncrement(tick_increment);
 		standarddialscale.setMinorTickCount(minor_tick_count);
 		standarddialscale.setTickRadius(0.88D);
@@ -105,18 +114,18 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 		DialCap dialcap = new DialCap();
 		dialplot.setCap(dialcap);
 		// colored ranges
-		StandardDialRange standarddialrange = new StandardDialRange(upper_bound - 10D, upper_bound,
-				Color.red);
+		StandardDialRange standarddialrange = new StandardDialRange(
+				upper_bound - 10D, upper_bound, Color.red);
 		standarddialrange.setInnerRadius(0.50D);
 		standarddialrange.setOuterRadius(0.53D);
 		dialplot.addLayer(standarddialrange);
-		StandardDialRange standarddialrange1 = new StandardDialRange(upper_bound - 20D, upper_bound - 10D,
-				Color.orange);
+		StandardDialRange standarddialrange1 = new StandardDialRange(
+				upper_bound - 20D, upper_bound - 10D, Color.orange);
 		standarddialrange1.setInnerRadius(0.50D);
 		standarddialrange1.setOuterRadius(0.53D);
 		dialplot.addLayer(standarddialrange1);
-		StandardDialRange standarddialrange2 = new StandardDialRange(lower_bound, upper_bound - 20D,
-				Color.green);
+		StandardDialRange standarddialrange2 = new StandardDialRange(
+				lower_bound, upper_bound - 20D, Color.green);
 		standarddialrange2.setInnerRadius(0.50D);
 		standarddialrange2.setOuterRadius(0.53D);
 		dialplot.addLayer(standarddialrange2);
@@ -138,6 +147,8 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 	}
 
 	private JPanel setupChartPanel() {
+		// TODO: Calculate power consumption bounds in relation to the number of
+		// available APs
 		powerConsumtionDataset = new DefaultValueDataset(23D);
 		JFreeChart jfreechart = setupDialChart("Small Cell Power Consumption",
 				"Watt (W)", powerConsumtionDataset, 0D, 100D, 10D, 4);
