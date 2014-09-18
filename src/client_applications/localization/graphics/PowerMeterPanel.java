@@ -43,18 +43,36 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 	private DefaultValueDataset powerConsumtionDataset;
 	private ArrayList<AccessPoint> ap_list;
 	private LauraMainWindow lmw;
+	private boolean is_attached;
 
 	public PowerMeterPanel(ArrayList<AccessPoint> access_points_list,
 			LauraMainWindow lmw) {
 		this.ap_list = access_points_list;
 		this.lmw = lmw;
 		
-		// set window size
-		this.setSize(300, 320);
-		
 		// create char panel and add it to frame
 		JPanel cp = setupChartPanel();
 		setContentPane(cp);
+		// set fixed size
+		this.setSize(280, 300);
+	}
+	
+	public void updateMeterValue(double val) 
+	{
+		this.powerConsumtionDataset.setValue(val);
+	}
+	
+	public boolean isAttached() {
+		return is_attached;
+	}
+
+	public void setAttached(boolean b) {
+		is_attached = b;
+		if(is_attached){
+			//this.setLocationRelativeTo(lmw);
+			//this.setLocation(lmw.getBounds().x + lmw.getWidth(),lmw.getBounds().y);
+			this.setLocation(lmw.getBounds().x - this.getWidth(),lmw.getBounds().y);
+		}
 	}
 
 	private JFreeChart setupDialChart(String title, String inner_title,
@@ -170,8 +188,7 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 		// pmp.setSize(400, 400);
 		pmp.setVisible(true);
 		pmp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// pmp.pack();
-		pmp.setLocationRelativeTo(null);
+		pmp.pack();
 	}
 
 }

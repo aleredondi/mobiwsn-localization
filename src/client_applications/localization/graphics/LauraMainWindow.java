@@ -22,6 +22,8 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	ArrayList<AccessPoint> access_points_list;
 	LauraNode selected_node = null;
 	
+	PowerMeterPanel pm_panel;
+	
 	//qua passerei i puntatori alle strutture dati dei nodi per disegnarli
 	JPanel content;
 	MapPanel map_panel; 
@@ -31,6 +33,8 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	JCheckBoxMenuItem showAnchorsMenuItem ;
 	// GT DEMO
 	JCheckBoxMenuItem showAccessPointsMenuItem;
+	JCheckBoxMenuItem showPMPMenuItem;
+	JCheckBoxMenuItem adPMPMenuItem;
 	//
 	JCheckBoxMenuItem showPatientNameMenuItem;
 	JCheckBoxMenuItem showPatientRulesMenuItem;
@@ -55,6 +59,9 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		//pannello comandi
 		quick_panel = new QuickPanel(anchor_list, mobile_list, access_points_list, this);
 		
+		// create power meter panel
+		pm_panel = new PowerMeterPanel(access_points_list, this);
+		pm_panel.setVisible(true);
 		
 		////////////////////////////////////////////////////////
 		//MENU
@@ -111,6 +118,20 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		adParamMenuItem.addActionListener(menuListener);
 		adParamMenuItem.setSelected(false);
 		viewMenu.add(adParamMenuItem);
+		
+		viewMenu.add(new JSeparator());
+		
+		//View - show power meter panel
+	    showPMPMenuItem = new JCheckBoxMenuItem("Show Power Meter Panel");
+		showPMPMenuItem.addActionListener(menuListener);
+		showPMPMenuItem.setSelected(true);
+		viewMenu.add(showPMPMenuItem);
+		
+		//View - attach / detach power meter panel
+	    adPMPMenuItem = new JCheckBoxMenuItem("Attach Power Meter Panel");
+		adPMPMenuItem.addActionListener(menuListener);
+		adPMPMenuItem.setSelected(false);
+		viewMenu.add(adPMPMenuItem);
 		
 		viewMenu.add(new JSeparator());
 		
@@ -233,6 +254,27 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		    		quick_panel.setAttached(true);
 		    }
 		    
+		   // power meter panel show 
+		    if(actionEvent.getActionCommand() == "Show Power Meter Panel"){
+		    	if(pm_panel.isVisible()){
+		    		pm_panel.setVisible(false);
+		    		adPMPMenuItem.setEnabled(false);
+		    	}
+		    	else {
+		    		pm_panel.setVisible(true);
+		    		adPMPMenuItem.setEnabled(true);
+		    	}
+		    }
+		    
+		    // power meter panel attach
+		    if(actionEvent.getActionCommand() == "Attach Power Meter Panel"){
+		    	if(pm_panel.isAttached()){
+		    		pm_panel.setAttached(false);
+		    	}
+		    	else 
+		    		pm_panel.setAttached(true);
+		    }
+		    
 		    //visualizza i nomi dei nodi mobili
 		    if(actionEvent.getActionCommand() == "Show Node Names"){
 		    	if(map_panel.isDrawingNames()){
@@ -350,6 +392,10 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	public void componentMoved(ComponentEvent e) {
 		if(quick_panel.isAttached() && this.hasFocus()){
 			quick_panel.setAttached(true);
+		}
+		
+		if(pm_panel.isAttached() && this.hasFocus()){
+			pm_panel.setAttached(true);
 		}
 		
 	}
