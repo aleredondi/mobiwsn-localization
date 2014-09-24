@@ -35,6 +35,7 @@ import org.jfree.ui.GradientPaintTransformer;
 import org.jfree.ui.StandardGradientPaintTransformer;
 
 import client_applications.localization.AccessPoint;
+import client_applications.localization.SmallCellPowerModel;
 
 public class PowerMeterPanel extends JFrame implements ActionListener,
 		ChangeListener, ComponentListener {
@@ -44,11 +45,13 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 	private ArrayList<AccessPoint> ap_list;
 	private LauraMainWindow lmw;
 	private boolean is_attached;
+	private SmallCellPowerModel powerModel;
 
 	public PowerMeterPanel(ArrayList<AccessPoint> access_points_list,
 			LauraMainWindow lmw) {
 		this.ap_list = access_points_list;
 		this.lmw = lmw;
+		this.powerModel = new SmallCellPowerModel(access_points_list);
 
 		// create char panel and add it to frame
 		JPanel cp = setupChartPanel();
@@ -58,9 +61,7 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 	}
 
 	public void update() {
-		// TODO: implement real power consumption colculation
-		this.updateMeterValue(Math.random() * 99);
-		System.out.println("Power Meter update.");
+		this.updateMeterValue(powerModel.getCurrentPowerConsumption());
 	}
 
 	private void updateMeterValue(double val) {
@@ -147,11 +148,11 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 	}
 
 	private JPanel setupChartPanel() {
-		// TODO: Calculate power consumption bounds in relation to the number of
-		// available APs
+		// assumes that APs information is already fetched from backend,
+		// in order to calculate the lower and upper bound
 		powerConsumtionDataset = new DefaultValueDataset(23D);
 		JFreeChart jfreechart = setupDialChart("Small Cell Power Consumption",
-				"Watt (W)", powerConsumtionDataset, 0D, 100D, 10D, 4);
+				"Watt (W)", powerConsumtionDataset, Math.min(0, powerModel.getMinPowerConsumption()), powerModel.getMaxPowerConsumption() * 1.5, 10D, 4);
 		ChartPanel chartpanel = new ChartPanel(jfreechart);
 		return chartpanel;
 	}
