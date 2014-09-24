@@ -60,6 +60,10 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 		this.setSize(280, 300);
 	}
 
+	/**
+	 * Public update method. Should be called periodically or when something 
+	 * in the AP model changes.
+	 */
 	public void update() {
 		this.updateMeterValue(powerModel.getCurrentPowerConsumption());
 	}
@@ -83,6 +87,18 @@ public class PowerMeterPanel extends JFrame implements ActionListener,
 		}
 	}
 
+	/**
+	 * Chart setup.
+	 * Meter visualization should only be changed on this method.
+	 * @param title
+	 * @param inner_title
+	 * @param valuedataset
+	 * @param lower_bound
+	 * @param upper_bound
+	 * @param tick_increment
+	 * @param minor_tick_count
+	 * @return
+	 */
 	private JFreeChart setupDialChart(String title, String inner_title,
 			ValueDataset valuedataset, double lower_bound, double upper_bound,
 			double tick_increment, int minor_tick_count) {

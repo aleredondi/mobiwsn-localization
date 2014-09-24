@@ -17,6 +17,11 @@ public class SmallCellPowerModel {
 		this.ap_list = access_points_list;
 	}
 	
+	/**
+	 * Calculate the maximum power consumption.
+	 * This is the scenario where all APs are active and under full load.
+	 * @return
+	 */
 	public float getMinPowerConsumption()
 	{
 		if(ap_list != null)
@@ -24,6 +29,11 @@ public class SmallCellPowerModel {
 		return 0;
 	}
 	
+	/**
+	 * Calculate the minimum power consumption.
+	 * This is the scenario where all APs are sleeping.
+	 * @return
+	 */
 	public float getMaxPowerConsumption()
 	{
 		if(ap_list != null)
@@ -31,16 +41,25 @@ public class SmallCellPowerModel {
 		return 100;
 	}
 	
+	/**
+	 * Calculate the current power consumption based on the current AP model.
+	 * @return
+	 */
 	public float getCurrentPowerConsumption()
 	{
 		if(ap_list != null)
 		{
-			// TODO use APs network utilization to interpolate between NOLOAD and FULLLOAD
+			// TODO use APs network utilization to interpolate between NOLOAD and FULLLOAD to make model more realistic
+			// other solution: use network data provided by UE interface to do the same job (sum up all traffic of UEs assigned to one AP)
 			return POWER_FULLLOAD * getActiveApCount();
 		}
 		return 0;
 	}
 	
+	/**
+	 * Return number of APs with 'power_state' != 0
+	 * @return
+	 */
 	private int getActiveApCount()
 	{
 		int count = 0;
