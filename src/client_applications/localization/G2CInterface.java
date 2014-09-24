@@ -35,7 +35,7 @@ public class G2CInterface {
 	}
 	
 	public void updateAccessPointsStatus(ArrayList<AccessPoint> access_points) throws ClientProtocolException, IOException, JSONException{
-		
+
 		HttpGet request = new HttpGet(base_url + "/api/accesspoint");
 		HttpResponse response = client.execute(request);
 		String json = EntityUtils.toString(response.getEntity());
@@ -56,8 +56,13 @@ public class G2CInterface {
 			
 			//look into the access_point vector and update the state
 			for(int j=0;j<access_points.size();j++){
-				if(access_points.get(j).getId()==ap.getString("device_id"))
+				if(access_points.get(j).getId() == null)
+					continue;
+				if(access_points.get(j).getId().equals(ap.getString("device_id")))
+				{
 					access_points.get(j).setIs_reachable(reachable);
+					//System.out.println("Update match: " + ap.getString("device_id"));
+				}
 			}
 		}
 	}

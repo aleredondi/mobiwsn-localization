@@ -10,7 +10,7 @@ public class SmallCellPowerModel {
 	private final float POWER_NOLOAD = 4.0F;
 	private final float POWER_FULLLOAD = 11.0F;
 	
-	private ArrayList<AccessPoint> ap_list;
+	private ArrayList<AccessPoint> ap_list = null;;
 
 
 	public SmallCellPowerModel(ArrayList<AccessPoint> access_points_list) {
@@ -19,17 +19,26 @@ public class SmallCellPowerModel {
 	
 	public float getMinPowerConsumption()
 	{
-		return POWER_SLEEP * ap_list.size();
+		if(ap_list != null)
+			return POWER_SLEEP * ap_list.size();
+		return 0;
 	}
 	
 	public float getMaxPowerConsumption()
 	{
-		return POWER_FULLLOAD * ap_list.size();
+		if(ap_list != null)
+			return POWER_FULLLOAD * ap_list.size();
+		return 100;
 	}
 	
 	public float getCurrentPowerConsumption()
 	{
-		return POWER_FULLLOAD * getActiveApCount();
+		if(ap_list != null)
+		{
+			// TODO use APs network utilization to interpolate between NOLOAD and FULLLOAD
+			return POWER_FULLLOAD * getActiveApCount();
+		}
+		return 0;
 	}
 	
 	private int getActiveApCount()
