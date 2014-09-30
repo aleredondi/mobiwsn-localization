@@ -27,6 +27,12 @@ public class AccessPoint extends LauraNode{
 	private String mac_address;
 	private String ip_address;
 	
+	//latest network stats values from backend
+	private long rx_bytes;
+	private long tx_bytes;
+	private float rx_bytes_per_second;
+	private float tx_bytes_per_second;
+	
 	private boolean is_reachable;
 	private Color color = new Color(20);
 	
@@ -218,6 +224,38 @@ public class AccessPoint extends LauraNode{
 
 	public void setMsg_counter(int msgCounter) {
 		msg_counter = msgCounter;
+	}
+
+	public long getRx_bytes() {
+		return rx_bytes;
+	}
+
+	public void setRx_bytes(long rx_bytes) {
+		this.rx_bytes = rx_bytes;
+	}
+
+	public long getTx_bytes() {
+		return tx_bytes;
+	}
+
+	public void setTx_bytes(long tx_bytes) {
+		this.tx_bytes = tx_bytes;
+	}
+
+	public float getRx_bytes_per_second() {
+		return rx_bytes_per_second;
+	}
+
+	public void setRx_bytes_per_second(float rx_bytes_per_second) {
+		this.rx_bytes_per_second = rx_bytes_per_second;
+	}
+
+	public float getTx_bytes_per_second() {
+		return tx_bytes_per_second;
+	}
+
+	public void setTx_bytes_per_second(float tx_bytes_per_second) {
+		this.tx_bytes_per_second = tx_bytes_per_second;
 	}
 	
 

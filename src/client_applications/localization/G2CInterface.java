@@ -54,6 +54,21 @@ public class G2CInterface {
 			else
 				reachable = true;
 			
+			long rx_bytes, tx_bytes;
+			float rx_bytes_per_second, tx_bytes_per_second;
+			try{
+				rx_bytes = ap.getLong("rx_bytes");
+				tx_bytes = ap.getLong("tx_bytes");
+				rx_bytes_per_second = (float)ap.getDouble("rx_bytes_per_second");
+				tx_bytes_per_second = (float)ap.getDouble("tx_bytes_per_second");
+			} catch(Exception e) {
+				rx_bytes = 0;
+				tx_bytes = 0;
+				rx_bytes_per_second = 0;
+				tx_bytes_per_second = 0;
+				System.err.println(e.getMessage());
+			}
+			
 			//look into the access_point vector and update the state
 			for(int j=0;j<access_points.size();j++){
 				if(access_points.get(j).getId() == null)
@@ -61,7 +76,10 @@ public class G2CInterface {
 				if(access_points.get(j).getId().equals(ap.getString("device_id")))
 				{
 					access_points.get(j).setIs_reachable(reachable);
-					//System.out.println("Update match: " + ap.getString("device_id"));
+					access_points.get(j).setRx_bytes(rx_bytes);
+					access_points.get(j).setTx_bytes(tx_bytes);
+					access_points.get(j).setRx_bytes_per_second(rx_bytes_per_second);
+					access_points.get(j).setTx_bytes_per_second(tx_bytes_per_second);
 				}
 			}
 		}
