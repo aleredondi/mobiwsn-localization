@@ -1,0 +1,30 @@
+<middleware_configuration>
+
+	<param name="mote_conn_type" value="SERIAL" />
+	<param name="serial_host" value="serial@/dev/ttyUSB1:57600" />
+
+<!--- INIZIO COMMENTO
+	<param name="serial_host" value="sf@localhost:9002" />
+
+	<param name="mote_conn_type" value="MICAZ_SERIAL" />
+	<param name="serial_port" value="/dev/ttyUSB1" />
+	<param name="serial_baud_rate" value="57600" />
+	
+	<param name="exception_handling_mode" value="Console" />
+	<param name="exception_handling_mode" value="file" />
+FINE COMMENTO -->
+
+	<param name="pan_coord_id" value="0" />	 
+	
+	<param name="response_timeout" value="6000" />
+
+	<param name="gateway_name" value="WSN_GW1" />
+
+<!--- 
+OSS: le seguenti coordinate del gateway (coordX e coordY) 
+sono necessarie per il client parking 
+-->
+	<param name="coordX" value="470" />
+	<param name="coordY" value="68" />
+	
+</middleware_configuration>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/temperature
+END
+TemperatureRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/temperature/TemperatureRemoteSensor.java
+END
+TemperatureInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/temperature/TemperatureInternalSensor.java
+END

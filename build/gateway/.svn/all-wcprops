@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway
+END
+InternalWSNManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/InternalWSNManager.java
+END
+ClassManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/ClassManager.java
+END
+GroupController.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/GroupController.java
+END
+RemoteWSNManagerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/RemoteWSNManagerImpl.java
+END
+InternalWSNManagerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/InternalWSNManagerImpl.java
+END
+InternalWSNGateway.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/InternalWSNGateway.java
+END
+WSNGatewayRemoteImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/WSNGatewayRemoteImpl.java
+END
+WSNGatewayInternalImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/WSNGatewayInternalImpl.java
+END
+ListSearchingManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/ListSearchingManager.java
+END
+RemoteWSNManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/RemoteWSNManager.java
+END
+WSNGatewayMain.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/WSNGatewayMain.java
+END

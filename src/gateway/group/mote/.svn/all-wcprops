@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote
+END
+RemoteMoteGroupImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/RemoteMoteGroupImpl.java
+END
+InternalMoteGroupImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/InternalMoteGroupImpl.java
+END
+AddMoteToGroupMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/AddMoteToGroupMessage.java
+END
+MoteGroupCommandType.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/MoteGroupCommandType.java
+END
+MoteGroupCommandMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/MoteGroupCommandMessage.java
+END
+RemoveMoteFromGroupMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/RemoveMoteFromGroupMessage.java
+END
+InternalMoteGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/group/mote/InternalMoteGroup.java
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/comm
+END
+WSNInterfaceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/comm/WSNInterfaceFactory.java
+END
+MiddlewareMessageSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MiddlewareMessageSender.java
+END
+MessageSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MessageSender.java
+END
+MoteConnectionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MoteConnectionType.java
+END
+MiddlewareMessageListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MiddlewareMessageListener.java
+END
+SerialWSNInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/comm/SerialWSNInterface.java
+END
+WSNInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/WSNInterface.java
+END
+MiddlewareCorrelateMessageListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MiddlewareCorrelateMessageListener.java
+END
+MessageListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/comm/MessageListener.java
+END

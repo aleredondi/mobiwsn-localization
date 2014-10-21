@@ -1,0 +1,10 @@
+WINDOWS
+
+start rmiregistry
+java -cp demo.jar -Djava.rmi.server.codebase=file:./demo.jar -Djava.rmi.server.hostname=127.0.0.1 common.ProjectMain serial@COM12:telosb
+
+
+
+LINUX
+
+java -cp demo.jar -Djava.rmi.server.codebase=file:/home/luca/Scrivania/VIGILO/demo.jar -Djava.rmi.server.hostname=127.0.0.1 common.ProjectMain serial@/dev/ttyUSB0:telosb

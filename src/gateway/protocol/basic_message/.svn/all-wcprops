@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/protocol/basic_message
+END
+GroupMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/GroupMessage.java
+END
+MiddlewareMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/protocol/basic_message/MiddlewareMessage.java
+END
+MiddlewareMessageType.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/MiddlewareMessageType.java
+END
+SerialMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/protocol/basic_message/SerialMessage.java
+END
+ErrorCodeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/ErrorCodeType.java
+END
+ByteMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/ByteMessage.java
+END
+PckScopeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/PckScopeType.java
+END
+PayloadType.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/protocol/basic_message/PayloadType.java
+END
+NetworkMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/protocol/basic_message/NetworkMessage.java
+END

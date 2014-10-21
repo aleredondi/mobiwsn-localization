@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/noise
+END
+NoiseRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/noise/NoiseRemoteSensor.java
+END
+NoiseInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/noise/NoiseInternalSensor.java
+END

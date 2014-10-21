@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/mote
+END
+InternalMote.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/mote/InternalMote.java
+END
+MoteFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mobiWSN/!svn/ver/303/branches/laura/codice_java/src/gateway/mote/MoteFactory.java
+END
+GenericRemoteMote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/mote/GenericRemoteMote.java
+END
+GenericInternalMote.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/mote/GenericInternalMote.java
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices
+END
+HeatingDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/HeatingDevice.java
+END
+DeviceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/DeviceImpl.java
+END
+LightDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/LightDevice.java
+END
+TVDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/TVDevice.java
+END
+DvdDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/DvdDevice.java
+END
+WiFiDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/home_virtualization_application/devices/WiFiDevice.java
+END

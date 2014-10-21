@@ -1,0 +1,91 @@
+
+Alcune informazioni sul middleware MobiWSN:
+
+Il middleware MobiWSN è realizzato in Java.
+Come è spiegato nella tesi i componenti principali sono 2 : WSNGateway e WSNGatewayManager.
+
+WSNGateway svolge le funzionalità di gateway per l'accesso e l'esecuzione di operazioni di 
+lettura e comando sui nodi sensore della rete di cui è gateway (deve essere agganciato ad un mote pan coordinator)
+
+WSNGatewayManager aggiunge funzionalità avanzate (vedi tesi)
+
+I due componenti sono stati sviluppati con Eclipse ed in questa cartella si trovano tutti i sorgenti,
+che rappresenta quindi la cartella src del progetto (per esempio mobiWSN_project), oltre alle librerie da importare in esso (in /scripts_&_lib)
+
+---------------------------------
+
+In /scripts_&_lib ci sono gli script di startup per i componenti WSNGateway e WSNGatewayManager:
+
+In particolare wsngatewaymanager_startup.sh:
+
+Linux:
+  /usr/lib/jvm/java-6-sun/bin/java \
+	-Djava.rmi.server.codebase=file:<path>/<workspacefolder>/bin/
+	-Djava.rmi.server.hostname=127.0.0.1
+	gateway.WSNGatewayManagerMain 127.0.0.1 nome_manager
+
+Windows:
+  /usr/lib/jvm/java-6-sun/bin/java \
+	-Djava.rmi.server.codebase=file:/C:\\<path>\\<workspacefolder>\\bin\\
+	-Djava.rmi.server.hostname=127.0.0.1
+	gateway.WSNGatewayManagerMain 127.0.0.1 nome_manager
+
+
+  dove :
+
+  - la codebase indica la cartella con i file .class del progetto (si può sostituire bin/ con un file jar del codice);
+  - hostname specifica di usare un certo indirizzo ip per identificare l'host, altrimenti ci sono problemi con RMI
+    (questo componente può e deve in generale essere in esecuzione su un host diverso dai WSNGateway);
+  - "gateway.WSNGatewayManagerMain 127.0.0.1 nome_manager" indica la classe principale da eseguire e l'ip necessario per ricreare l'URI con cui 
+    registrare e pubblicare il componente GatewayManager (cioè l'URI che verrà utilizzato dai WSNGateway per registrarsi al WSNGatewayManager).
+    Mentre nome_manager è il nome scelto per il manager (a piacimento).
+
+wsngateway_startup.sh :
+
+  /usr/lib/jvm/java-6-sun/bin/java \
+	-Djava.rmi.server.hostname=127.0.0.1
+	gateway.WSNGatewayMain 127.0.0.1 nome_manager
+
+  dove
+  - "gateway.WSNGatewayMain 127.0.0.1 nome_manager" indica la classe principale da lanciare, dove l'ip specificato è quello del WSNGatewayManager
+    (che quindi deve già essere in esecuzione) necessario per la registrazione del WSNGateway.
+    Mentre nome_manager è il nome scelto per il manager (a piacimento).
+
+---------------------------------
+
+Per eseguire il codice tramite eclipse bisogna invece aggiungere negli Arguments, 
+
+per WSNGatewayManagerMain:
+
+    Program arguments: 127.0.0.1 nome_manager
+Linux:
+    VM arguments: -Djava.rmi.server.codebase=file:<path>/<workspacefolder>/bin/ -Djava.rmi.server.hostname=127.0.0.1
+Windows:
+    VM arguments: -Djava.rmi.server.codebase=file:/C:\\<path>\\<workspacefolder>\\bin\\ -Djava.rmi.server.hostname=127.0.0.1
+
+per WSNGatewayMain:
+
+    Program arguments: 127.0.0.1 nome_manager comm (SIMULATION: sf@localhost:9001 oppure INSTALLATION: serial@<serial_port>:<baud_rate>)
+Linux:
+    VM arguments: -Djava.rmi.server.hostname=127.0.0.1
+Windows:
+    VM arguments: -Djava.rmi.server.hostname=127.0.0.1
+
+---------------------------------
+
+OSS:
+
+- creare il progetto che comprende, oltre ai package principali (/gateway e /gateway_manager) 
+  anche le cartelle comuni (/common e /remote_interfaces)
+
+- ricordarsi di cambiare i percorsi ai file .class (cioè del codebase) e l'indirizzo IP dei computer utilizzati (dove hostname è quello locale,
+  quì viene usato il localhost), lo sottolineo comunque anche se mi sembra scontato;
+ 
+- copiare il file myjava.policy nella cartella di entrambi i progetti (per capirci al livello di bin e src)
+
+- importare le librerie jar racchise nella cartella /scripts_&_lib (ovviamente ogni libreria deve essere importata una sola volta
+  anche se ripetuta in più sottodirectory) e tinyos.jar (che è in /opt/tinyos-2.x/support/sdk/java/)
+
+- per poter fa partire il gateway deve essere aperta la SerialForwarder di tinyos tramite il comando: 
+	java net.tinyos.sf.SerialForwarder -comm sf@localhost:9001
+	

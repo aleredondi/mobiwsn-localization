@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization
+END
+LauraManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/LauraManager.java
+END
+TopologySubscriber.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/TopologySubscriber.java
+END
+MobileManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/mobiWSN/!svn/ver/321/branches/laura/codice_java/src/client_applications/localization/MobileManager.java
+END
+Track.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/321/branches/laura/codice_java/src/client_applications/localization/Track.java
+END
+myjava.policy
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/myjava.policy
+END
+RssiMatrix.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/RssiMatrix.java
+END
+AnchorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/AnchorManager.java
+END
+ProximityEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/ProximityEvent.java
+END
+LauraNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/mobiWSN/!svn/ver/315/branches/laura/codice_java/src/client_applications/localization/LauraNode.java
+END
+EventManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/EventManager.java
+END
+FunctionalitySubscriber.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/FunctionalitySubscriber.java
+END
+MobileNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/MobileNode.java
+END
+Point2D.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/Point2D.java
+END
+AnchorNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/AnchorNode.java
+END
+RssiCell.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/RssiCell.java
+END
+Event.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/Event.java
+END
+IntrusionRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/IntrusionRule.java
+END
+LauraParam.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/client_applications/localization/LauraParam.java
+END
+IntrusionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/client_applications/localization/IntrusionEvent.java
+END
+RssiColumn.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/mobiWSN/!svn/ver/309/branches/laura/codice_java/src/client_applications/localization/RssiColumn.java
+END

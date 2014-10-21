@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/acceleration
+END
+AccelerationXRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationXRemoteSensor.java
+END
+AccelerationXInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationXInternalSensor.java
+END
+AccelerationYRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationYRemoteSensor.java
+END
+AccelerationYInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/mobiWSN/!svn/ver/340/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationYInternalSensor.java
+END
+AccelerationZRemoteSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationZRemoteSensor.java
+END
+AccelerationZInternalSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationZInternalSensor.java
+END
+AccelerationXSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationXSensor.java
+END
+AccelerationYSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationYSensor.java
+END
+AccelerationZSensor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mobiWSN/!svn/ver/301/branches/laura/codice_java/src/gateway/sensor/acceleration/AccelerationZSensor.java
+END

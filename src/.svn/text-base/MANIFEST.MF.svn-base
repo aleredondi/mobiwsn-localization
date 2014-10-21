@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: lib/tinyos.jar lib/AbsoluteLayout.jar lib/appframework-1.0.3.jar lib/jcommon-1.0.16.jar lib/jfreechart-1.0.13.jar lib/jgraph.jar lib/jsr-275-1.0-beta-2.jar lib/swing-layout-1.0.3.jar lib/swing-worker-1.1.jar lib/localization lib/Jama.jar
