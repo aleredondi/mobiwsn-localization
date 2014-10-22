@@ -311,19 +311,19 @@ public class LauraManager implements Runnable{
 						
 						System.out.println("---------------------->it's a fixed node");
 						
-						//rfid anchors location						
+						//rfid anchors location				
 						switch(new_anchor.getMac()){
 						case 1:
 							new_anchor.setX(12.6);
 							new_anchor.setY(22);
 							break;
 						case 2:
-							new_anchor.setX(24.7);
-							new_anchor.setY(6.15);
+							new_anchor.setX(31.4);
+							new_anchor.setY(10.08);
 							break;
 						case 3:
-							new_anchor.setX(19.3);
-							new_anchor.setY(6.1);
+							new_anchor.setX(25.5);
+							new_anchor.setY(7.9);
 							break;
 						case 4:
 							new_anchor.setX(12.4);
@@ -365,13 +365,13 @@ public class LauraManager implements Runnable{
 							new_anchor.setX(11.8);
 							new_anchor.setY(3.85);
 							break;
-						case 14:
-							new_anchor.setX(25.7);
-							new_anchor.setY(18);
+						case 18:
+							new_anchor.setX(18.8);
+							new_anchor.setY(13);
 							break;
-						case 15:
-							new_anchor.setX(23.6);
-							new_anchor.setY(23);
+						case 19:
+							new_anchor.setX(24.7);
+							new_anchor.setY(11.7);
 							break;
 						case 23:
 							new_anchor.setX(20.8);
@@ -432,7 +432,7 @@ public class LauraManager implements Runnable{
 						//if(!has_accel)
 							//System.out.println("non ho l'accelerometro");
 						
-						MobileNode new_mobile = new MobileNode(curr_mote.getId(),12,22,param,curr_mote.isReachable(),curr_mote,has_accel);
+						MobileNode new_mobile = new MobileNode(curr_mote.getId(),0,0,param,curr_mote.isReachable(),curr_mote,has_accel);
 						mobile_list.add(new_mobile);
 										
 					}
@@ -836,7 +836,7 @@ public class LauraManager implements Runnable{
 				if(curr_target.getId().equals(mote_id)){
 					curr_target.updateLocation(rssi, anchor_pos, S_red, D);
 					try {
-						g2c_interface.updateLocation("node1", curr_target.getX_draw(), curr_target.getY_draw());
+						g2c_interface.updateLocation(curr_target.getPatientId(), curr_target.getX_draw(), curr_target.getY_draw());
 					} catch (ClientProtocolException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -47,6 +47,8 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 	public static final int X_OFFSET = 0;//40;  
 	public static final int Y_OFFSET = 0;//40;
 	private final int NUM_WALLS = 56; 
+	
+	public static final double SCALE = 1.25;
 	//laura 57
 	//ale 43
 	//3piano 56
@@ -221,8 +223,8 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 					dim = 12;
 				}			 
 				g.setColor(anchor_list.get(i).getColor());
-				g.fillOval(X_OFFSET + (int)Math.round(anchor_list.get(i).getX()*PPM) - dim/2, Y_OFFSET + (int)Math.round(anchor_list.get(i).getY()*PPM) -dim/2, dim, dim);
-				g.drawString(Integer.toString(anchor_list.get(i).getMac()),X_OFFSET + (int)Math.round(anchor_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(anchor_list.get(i).getY()*PPM));
+				g.fillOval(X_OFFSET + (int)Math.round(anchor_list.get(i).getX()*SCALE*PPM) - dim/2, Y_OFFSET + (int)Math.round(anchor_list.get(i).getY()*SCALE*PPM) -dim/2, dim, dim);
+				g.drawString(Integer.toString(anchor_list.get(i).getMac()),X_OFFSET + (int)Math.round(anchor_list.get(i).getX()*SCALE*PPM), Y_OFFSET + (int)Math.round(anchor_list.get(i).getY()*SCALE*PPM));
 			}
 		}
 
@@ -238,11 +240,18 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 				g.fillOval(X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2, Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM) -dim/2, dim, dim);
 				g.drawString(access_points_list.get(i).getId(),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM));*/
 				//GT DEMO
-				if(access_points_list.get(i).isIs_reachable())
-					g.drawImage(ap_icon_on,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM)- dim/2,dim,dim,this);
-				else
-					g.drawImage(ap_icon_off,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*PPM)- dim/2,dim,dim,this);
-					
+				if(access_points_list.get(i).isIs_reachable()){
+					g.drawImage(ap_icon_on,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*SCALE*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*SCALE*PPM)- dim/2,dim,dim,this);
+					g.setColor(Color.GREEN);
+				}
+				else{
+					g.drawImage(ap_icon_off,X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*SCALE*PPM) - dim/2,Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*SCALE*PPM)- dim/2,dim,dim,this);
+					g.setColor(Color.RED);
+				}
+				g.setFont(new Font("Helvetica", Font.BOLD,  12));
+				g.drawString(access_points_list.get(i).getId(),X_OFFSET + (int)Math.round(access_points_list.get(i).getX()*SCALE*PPM -dim), Y_OFFSET + (int)Math.round(access_points_list.get(i).getY()*SCALE*PPM) + dim);
+
+				
 			}
 		}
 		//
@@ -254,7 +263,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 			double y_draw = mobile_list.get(i).getY_draw();
 			if(mobile_list.get(i)==lmw.selected_node){
 				g.setColor(mobile_list.get(i).getColor());
-				g.fillOval(X_OFFSET + (int)Math.round(x_draw*PPM) - 7, Y_OFFSET + (int)Math.round(y_draw*PPM) - 7, 15, 15);	 
+				g.fillOval(X_OFFSET + (int)Math.round(x_draw*SCALE*PPM) - 7, Y_OFFSET + (int)Math.round(y_draw*SCALE*PPM) - 7, 15, 15);	 
 
 				//INSERISCI L'ANIMAZIONE PER LA SELEZIONE QUA
 
@@ -262,22 +271,22 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 					g.setFont(new Font("Helvetica", Font.BOLD,  14));
 					g.setColor(Color.black);
 					g.drawString(mobile_list.get(i).getPatientId(), 
-							X_OFFSET + (int)Math.round(x_draw*PPM),
-							Y_OFFSET + (int)Math.round(y_draw*PPM));
+							X_OFFSET + (int)Math.round(x_draw*SCALE*PPM),
+							Y_OFFSET + (int)Math.round(y_draw*SCALE*PPM));
 				}
 			}
 			else{
 
 				g.setColor(mobile_list.get(i).getColor());
-				g.fillOval(X_OFFSET + (int)Math.round(x_draw*PPM) - 5, Y_OFFSET + (int)Math.round(y_draw*PPM) - 5, 10, 10);
+				g.fillOval(X_OFFSET + (int)Math.round(x_draw*SCALE*PPM) - 5, Y_OFFSET + (int)Math.round(y_draw*SCALE*PPM) - 5, 10, 10);
 				g.setColor(Color.white);
-				g.fillOval(X_OFFSET + (int)Math.round(x_draw*PPM) - 3, Y_OFFSET + (int)Math.round(y_draw*PPM) - 3, 6, 6);
+				g.fillOval(X_OFFSET + (int)Math.round(x_draw*SCALE*PPM) - 3, Y_OFFSET + (int)Math.round(y_draw*SCALE*PPM) - 3, 6, 6);
 				if(this.drawingNames){
 					g.setFont(new Font("Helvetica", Font.PLAIN,  12));
 					g.setColor(Color.black);
 					g.drawString(mobile_list.get(i).getPatientId(), 
-							X_OFFSET + (int)Math.round(x_draw*PPM),
-							Y_OFFSET + (int)Math.round(y_draw*PPM));
+							X_OFFSET + (int)Math.round(x_draw*SCALE*PPM),
+							Y_OFFSET + (int)Math.round(y_draw*SCALE*PPM));
 				}
 			}
 
@@ -406,8 +415,8 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 		if(positioningAnchors){
 			AnchorNode anchor = (AnchorNode)lmw.selected_node;
 			if(e.getButton()==MouseEvent.BUTTON1){
-				anchor.setX((x-X_OFFSET) / PPM);
-				anchor.setY((y-Y_OFFSET) / PPM);
+				anchor.setX((x-X_OFFSET) / (PPM*SCALE));
+				anchor.setY((y-Y_OFFSET) / (PPM*SCALE));
 			}
 			repaint();
 			this.setPositioningAnchors(false);
@@ -423,8 +432,8 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 		if(positioningAccessPoints){
 			AccessPoint access_point = (AccessPoint)lmw.selected_node;
 			if(e.getButton()==MouseEvent.BUTTON1){
-				access_point.setX((x-X_OFFSET) / PPM);
-				access_point.setY((y-Y_OFFSET) / PPM);
+				access_point.setX((x-X_OFFSET) / (PPM*SCALE));
+				access_point.setY((y-Y_OFFSET) / (PPM*SCALE));
 			}
 			repaint();
 			this.setPositioningAccessPoints(false);
@@ -463,7 +472,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 		else{
 			//seleziono un nodo mobile
 			for(int i=0; i<mobile_list.size();i++){
-				if(Math.abs(x-X_OFFSET-mobile_list.get(i).getX()*PPM)<15 && Math.abs(y-Y_OFFSET-mobile_list.get(i).getY()*PPM)<15){
+				if(Math.abs(x-X_OFFSET-mobile_list.get(i).getX()*SCALE*PPM)<15 && Math.abs(y-Y_OFFSET-mobile_list.get(i).getY()*SCALE*PPM)<15){
 					lmw.selectNode(mobile_list.get(i));
 					found = true;
 				}		
@@ -471,15 +480,15 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 
 			//seleziono un ancora
 			for(int i=0; i<anchor_list.size();i++){
-				if(drawingAnchors && Math.abs(x-X_OFFSET-anchor_list.get(i).getX()*PPM)<15 && Math.abs(y-Y_OFFSET-anchor_list.get(i).getY()*PPM)<15){
+				if(drawingAnchors && Math.abs(x-X_OFFSET-anchor_list.get(i).getX()*SCALE*PPM)<15 && Math.abs(y-Y_OFFSET-anchor_list.get(i).getY()*SCALE*PPM)<15){
 					lmw.selectNode(anchor_list.get(i));
 					found = true;
 				}	
 			}
 
-			//GT DEMO
+			//GT DEMO selezione access point
 			for(int i=0;i<access_points_list.size();i++){
-				if(drawingAccessPoints && Math.abs(x-X_OFFSET-access_points_list.get(i).getX()*PPM)<15 && Math.abs(y-Y_OFFSET-access_points_list.get(i).getY()*PPM)<15){
+				if(drawingAccessPoints && Math.abs(x-X_OFFSET-access_points_list.get(i).getX()*SCALE*PPM)<15 && Math.abs(y-Y_OFFSET-access_points_list.get(i).getY()*SCALE*PPM)<15){
 					lmw.selectNode(access_points_list.get(i));
 					found = true;
 				}
@@ -915,12 +924,12 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 				//MURI 3 PIANO
 				double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
 				double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
-				double scale = 1.25;
+				//double scale = 1.25;
 				
 				for(int i=0;i<x.length-1;i++){
 		
-					walls[0][i] = new Point2D(x[i]*scale/PPM,y[i]*scale/PPM);
-					walls[1][i] = new Point2D(x[i+1]*scale/PPM, y[i+1]*scale/PPM);
+					walls[0][i] = new Point2D(x[i]*SCALE/PPM,y[i]*SCALE/PPM);
+					walls[1][i] = new Point2D(x[i+1]*SCALE/PPM, y[i+1]*SCALE/PPM);
 					//System.out.println("wall " + i);
 					//System.out.print("start: ");
 					//walls[0][i].print();

@@ -27,16 +27,16 @@ public class UserEquipment {
 	private float txTotalBps;
 	private float txMobileBps;
 	private float txWifiBps;
-	
+
 	//structures for storing data
 	ArrayList<Double> txWifiBpsArray = new ArrayList<Double>();
 	ArrayList<Double> rxWifiBpsArray = new ArrayList<Double>();
 	ArrayList<Double> sumtxrxWifiBpsArray = new ArrayList<Double>();
 	ArrayList<Second> timeWifiBpsArray = new ArrayList<Second>();
-	
-	
-	
-	
+
+
+
+
 	public String getUuid() {
 		return uuid;
 	}
@@ -139,14 +139,14 @@ public class UserEquipment {
 	public void setTxWifiBps(float txWifiBps) {
 		this.txWifiBps = txWifiBps;
 	}
-	
+
 	public UserEquipment(String uuid, String uri)
 	{
 		this.setUuid(uuid);
 		this.setUri(uri);
 		this.setDeviceId("not initialized");
 	}
-	
+
 	public void updeteUe(JSONObject ue) throws JSONException
 	{		
 		if(ue.has("device_id") && !ue.isNull("device_id"))
@@ -171,44 +171,57 @@ public class UserEquipment {
 			this.setRxTotalBps((float)ue.getDouble("rx_total_bytes_per_second"));
 		if(ue.has("rx_mobile_bytes_per_second") && !ue.isNull("rx_mobile_bytes_per_second"))
 			this.setRxMobileBps((float)ue.getDouble("rx_mobile_bytes_per_second"));
-		
+
 		if(ue.has("rx_wifi_bytes_per_second") && !ue.isNull("rx_wifi_bytes_per_second")){
 			double rx_wifi_bps = ue.getDouble("rx_wifi_bytes_per_second");
 			this.setRxWifiBps((float)rx_wifi_bps);
+			if(rxWifiBpsArray.size()>=60)
+				rxWifiBpsArray.remove(0);
+
 			rxWifiBpsArray.add((Double)rx_wifi_bps);
 		}
-		
+
 		if(ue.has("tx_total_bytes_per_second") && !ue.isNull("tx_total_bytes_per_second"))
 			this.setTxTotalBps((float)ue.getDouble("tx_total_bytes_per_second"));
 		if(ue.has("tx_mobile_bytes_per_second") && !ue.isNull("tx_mobile_bytes_per_second"))
 			this.setTxMobileBps((float)ue.getDouble("tx_mobile_bytes_per_second"));
-			
+
 		if(ue.has("tx_wifi_bytes_per_second") && !ue.isNull("tx_wifi_bytes_per_second")){
 			double tx_wifi_bps = ue.getDouble("tx_wifi_bytes_per_second");
 			this.setTxWifiBps((float)tx_wifi_bps);
+			if(txWifiBpsArray.size()>=60)
+				txWifiBpsArray.remove(0);
+
 			txWifiBpsArray.add((Double)tx_wifi_bps);
+
 		}
-		
+
 		if(ue.has("rx_wifi_bytes_per_second") && !ue.isNull("rx_wifi_bytes_per_second") && ue.has("tx_wifi_bytes_per_second") && !ue.isNull("tx_wifi_bytes_per_second")){
 			double tx_wifi_bps = ue.getDouble("tx_wifi_bytes_per_second");
 			double rx_wifi_bps = ue.getDouble("rx_wifi_bytes_per_second");
 			double sum_wifi_bps = tx_wifi_bps + rx_wifi_bps;
-			sumtxrxWifiBpsArray.add((Double)sum_wifi_bps);
+			if(sumtxrxWifiBpsArray.size()>=60)
+				sumtxrxWifiBpsArray.remove(0);
+				
+				sumtxrxWifiBpsArray.add((Double)sum_wifi_bps*8/1000000);
 		}
-		
+
 		Calendar cal = Calendar.getInstance();
+		if(timeWifiBpsArray.size()>=60)
+			timeWifiBpsArray.remove(0);
+		
 		timeWifiBpsArray.add(new Second(cal.get(Calendar.SECOND),cal.get(Calendar.MINUTE),cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.DATE),cal.get(Calendar.MONTH),cal.get(Calendar.YEAR)));
 
 	}
-	
+
 	public ArrayList<Second> getTimeWifiBpsArray() {
 		return timeWifiBpsArray;
 	}
-	
+
 	public ArrayList<Double> getSumtxrxWifiBpsArray() {
 		return sumtxrxWifiBpsArray;
 	}
-	
+
 	public String toString()
 	{
 		return this.getUri();

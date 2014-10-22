@@ -141,8 +141,9 @@ ChangeListener, ComponentListener {
 
 		// THROUGHPUT CHART
 		updateChartUeThr();
-		chart = ChartFactory.createTimeSeriesChart("THR", "Time", "Throughput", null, false, false, false);
+		chart = ChartFactory.createTimeSeriesChart(null, "Time", "Throughput [Mbps]", null, false, false, false);
 		ChartPanel chartPanel = new ChartPanel(chart);
+		chart.getPlot().setBackgroundPaint(Color.WHITE);
 		//infoPanel.add(chartPanel);
 
 		/*Calendar cal2 = Calendar.getInstance();

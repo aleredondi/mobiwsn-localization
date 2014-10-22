@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/httpcomponents-client-4.3.5/lib/httpmime-4.3.5.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/gateway/jsr-275-1.0-beta-2.jar"/>
 	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/org.json-20120521.jar"/>
+	<classpathentry kind="lib" path="src/scripts_&amp;_lib/client_applications/localization/greenTouchVideo.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

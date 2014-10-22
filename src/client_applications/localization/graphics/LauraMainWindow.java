@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
+import greentouch.video.*;
+
 public class LauraMainWindow extends JFrame implements ComponentListener{
 	
 	
@@ -22,10 +24,13 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	ArrayList<AccessPoint> access_points_list;
 	ArrayList<UserEquipment> ue_list;
 	LauraNode selected_node = null;
+	 
 	
 	PowerMeterPanel pm_panel;
 	MultiPowerMeterPanel mpm_panel;
 	UeInfoPanel ue_panel;
+	GreenTouchVideoStreamingEndpoint gtvsep; 
+	JPanel video_panel;
 	
 	//qua passerei i puntatori alle strutture dati dei nodi per disegnarli
 	JPanel content;
@@ -78,6 +83,13 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		// create UE info panel
 		ue_panel = new UeInfoPanel(ue_list, this);
 		ue_panel.setVisible(true);
+		
+		gtvsep = new GreenTouchVideoStreamingEndpoint();
+		GreenTouchVideoStreamingEndpoint.displayIntoFrame(gtvsep);
+		
+		//video_panel = gtvsep.getMainPanel();
+		//video_panel.setPreferredSize(new Dimension(500,500));
+		//video_panel.setVisible(true);
 		
 		////////////////////////////////////////////////////////
 		//MENU

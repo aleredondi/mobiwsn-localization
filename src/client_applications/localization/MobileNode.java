@@ -103,7 +103,7 @@ public class MobileNode extends LauraNode{
 	Random rgen = new Random();
 	
 	//questa sarà da togliere da qua
-	private final int NUM_WALLS = 57;
+	private final int NUM_WALLS = 56;
     //laura 57
     //ale 43
     //3piano 56
@@ -430,8 +430,8 @@ public class MobileNode extends LauraNode{
 				//System.out.print("target per il salto: ");
 				//target.print();
 				//System.out.println("mia posizione verde:" + this.x + " " + this.y);
-				//if(isInsideWalls(target)){
-				if(true){
+				if(isInsideWalls(target)){
+				//if(true){
 					System.out.println("SALTO!");
 					this.x = target.getX();
 					this.y = target.getY();
@@ -655,10 +655,10 @@ public class MobileNode extends LauraNode{
 		
 	   Point2D target = laterate(d_svd,anchor_pos,w);
 		//Point2D target = new Point2D(this.getX(),this.getY());
-	   /*if(!isInsideWalls(target)){
+	   if(!isInsideWalls(target)){
 		   this.setIs_reachable(false);
 		   target = new Point2D(0,0);
-	   }*/
+	   }
 	   
 	   //3. inizializzazione del particle filter
 		for(int i=0;i<N_OF_PARTICLES;i++){
@@ -800,7 +800,7 @@ public class MobileNode extends LauraNode{
 //	}
 
 //		//MURI LAURA
-		double[] x = {200,291,291,254,281,336,397,397,340,340,485,485,460,460,410,410,455,520,560,600,600,545,545,650,650,610,610,640,640,660,655,585,525,455,440,485,560,560,485,420,440,400,350,380,380,320,320,360,360,310,225,135,90,90,260,260,200,200};
+		/*double[] x = {200,291,291,254,281,336,397,397,340,340,485,485,460,460,410,410,455,520,560,600,600,545,545,650,650,610,610,640,640,660,655,585,525,455,440,485,560,560,485,420,440,400,350,380,380,320,320,360,360,310,225,135,90,90,260,260,200,200};
 		double[] y = {241,241,227,227,133,76,177,230,230,244,244,233,233,217,217,180,180,80,115,185,231,233,244,244,284,284,300,300,340,340,395,450,450,400,350,300,300,284,284,340,400,450,400,330,284,284,300,300,345,415,445,410,335,300,300,284,284,241};
 				
 		for(int i=0;i<x.length-1;i++){
@@ -811,22 +811,22 @@ public class MobileNode extends LauraNode{
 			walls[0][i].print();
 			System.out.print("stop: ");
 			walls[1][i].print();
-		}
+		}*/
 		
-//		//MURI 3 PIANO
-//		double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
-//		double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
-//
-//      for(int i=0;i<x.length-1;i++){
-//
-//			walls[0][i] = new Point2D(x[i]/PPM,y[i]/PPM);
-//			walls[1][i] = new Point2D(x[i+1]/PPM, y[i+1]/PPM);
-//			//System.out.println("wall " + i);
-//			//System.out.print("start: ");
-//			//walls[0][i].print();
-//			//System.out.print("stop: ");
-//			//walls[1][i].print();
-//		}
+		//MURI 3 PIANO
+		double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
+		double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
+
+      for(int i=0;i<x.length-1;i++){
+
+			walls[0][i] = new Point2D(x[i]/PPM,y[i]/PPM);
+			walls[1][i] = new Point2D(x[i+1]/PPM, y[i+1]/PPM);
+			//System.out.println("wall " + i);
+			//System.out.print("start: ");
+			//walls[0][i].print();
+			//System.out.print("stop: ");
+			//walls[1][i].print();
+		}
 		
 //		//MURI RFID LAB	
 //		double[] x = {774,774,662,662,774,774,632,632,629,629,358,358,629,629,632,632,580,580,629,629,358,358,478,478,358,358,326,326,355,355,12,12,299,299,12,12,91,91,215,215,612,612,218,218,372,372,368,368,218,218,574,574,576,576,774};
