@@ -28,6 +28,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	
 	PowerMeterPanel pm_panel;
 	MultiPowerMeterPanel mpm_panel;
+	MultiAPHistoryPanel mahp_panel;
 	UeInfoPanel ue_panel;
 	GreenTouchVideoStreamingEndpoint gtvsep; 
 	JPanel video_panel;
@@ -43,6 +44,8 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	JCheckBoxMenuItem showAccessPointsMenuItem;
 	JCheckBoxMenuItem showPMPMenuItem;
 	JCheckBoxMenuItem adPMPMenuItem;
+	JCheckBoxMenuItem showAPHMenuItem;
+	JCheckBoxMenuItem adAPHMenuItem;
 	JCheckBoxMenuItem showMPMPMenuItem;
 	JCheckBoxMenuItem adMPMPMenuItem;
 	JCheckBoxMenuItem showUEPMenuItem;
@@ -80,6 +83,10 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		mpm_panel = new MultiPowerMeterPanel(access_points_list, this);
 		mpm_panel.setVisible(true);
 		
+		//create multi ap history panel
+		mahp_panel = new MultiAPHistoryPanel(access_points_list, this);
+		mahp_panel.setVisible(true);
+				
 		// create UE info panel
 		ue_panel = new UeInfoPanel(ue_list, this);
 		ue_panel.setVisible(true);
@@ -160,6 +167,20 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		adPMPMenuItem.addActionListener(menuListener);
 		adPMPMenuItem.setSelected(false);
 		viewMenu.add(adPMPMenuItem);
+		
+		viewMenu.add(new JSeparator());
+		
+		//View - show ap history panel
+	    showAPHMenuItem = new JCheckBoxMenuItem("Show AP History Panel");
+	    showAPHMenuItem.addActionListener(menuListener);
+	    showAPHMenuItem.setSelected(true);
+		viewMenu.add(showAPHMenuItem);
+		
+		//View - attach / detach show ap history panel
+	    adAPHMenuItem = new JCheckBoxMenuItem("Attach AP History Panel");
+	    adAPHMenuItem.addActionListener(menuListener);
+	    adAPHMenuItem.setSelected(false);
+		viewMenu.add(adAPHMenuItem);
 		
 		viewMenu.add(new JSeparator());
 		
@@ -474,6 +495,11 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 
 	public void updateAnchorTemperature(){
 		quick_panel.updateAnchorTemperature();
+	}
+	
+	public void updateApHistoryPanel(){
+		if(mahp_panel != null)
+			mahp_panel.update();
 	}
 	
 	public void updatePowerMeterPanel(){	

@@ -21,7 +21,7 @@ public class SmallCellPowerModel {
 	private final float POWER_FULLLOAD = 6.9F;
 	// number of bytes per second on full load (rx + tx)
 	// TODO: not sure which value is best to use here, e.g.: 54000000 = 54Mbits 
-	private final float AP_MAX_BYTES_PER_SECOND = 3000000;
+	private final float AP_MAX_BYTES_PER_SECOND = 5000000;
 
 	/**
 	 * List containing latest AP data, fetched from the backend

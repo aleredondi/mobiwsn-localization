@@ -199,6 +199,7 @@ ChangeListener, ComponentListener {
 			TimeSeriesCollection thr_dataset = new TimeSeriesCollection();
 			thr_dataset.addSeries(series);
 			chart.getXYPlot().setDataset(thr_dataset);
+			chart.getXYPlot().getRangeAxis().setRange(0, 40);
 		}
 	}
 
@@ -223,8 +224,8 @@ ChangeListener, ComponentListener {
 					{"Wi-Fi Mac", ue.getWifiMac()},
 					{"URI", ue.getUri()},
 					{"Assigned AP", ue.getAssignedAccessPoint()},
-					{"WiFi bytes/s", String.valueOf(ue.getRxWifiBps() + ue.getTxWifiBps())},
-					{"Mobile byte/s", String.valueOf(ue.getRxMobileBps() + ue.getTxMobileBps())}
+					{"WiFi Mbps", String.valueOf((ue.getRxWifiBps() + ue.getTxWifiBps())*8/1000000)},
+					{"Mobile Mbps", String.valueOf((ue.getRxMobileBps() + ue.getTxMobileBps())*8/1000000)}
 			};
 
 			// add each row

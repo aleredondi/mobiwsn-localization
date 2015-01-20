@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -140,6 +142,7 @@ public class G2CInterface {
 					access_points.get(j).setTx_bytes(tx_bytes);
 					access_points.get(j).setRx_bytes_per_second(rx_bytes_per_second);
 					access_points.get(j).setTx_bytes_per_second(tx_bytes_per_second);
+					access_points.get(j).setTime_bytes_per_second();
 				}
 			}
 		}
@@ -171,6 +174,7 @@ public class G2CInterface {
 			AccessPoint access_point = new AccessPoint(ap.getString("device_id"),ap.getString("bssid"),"127.0.0.1",ap.getDouble("position_x"),ap.getDouble("position_y"),reachable);
 			access_points.add(access_point);
 		}
+		Collections.sort(access_points);
 		return access_points;
 	}
 
@@ -239,6 +243,7 @@ public final class APChecker extends TimerTask{
 			}
 			lmw.repaint();
 			lmw.updatePowerMeterPanel();
+			lmw.updateApHistoryPanel();
 		}
 	}
 
