@@ -7,8 +7,12 @@ import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.*;
 
 import greentouch.video.*;
@@ -23,6 +27,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	//GT DEMO
 	ArrayList<AccessPoint> access_points_list;
 	ArrayList<UserEquipment> ue_list;
+	ArrayList<BackendAlgorithm> algorithm_list;
 	LauraNode selected_node = null;
 	 
 	
@@ -32,6 +37,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	UeInfoPanel ue_panel;
 	GreenTouchVideoStreamingEndpoint gtvsep; 
 	JPanel video_panel;
+	JMenu algorithmMenu;
 	
 	//qua passerei i puntatori alle strutture dati dei nodi per disegnarli
 	JPanel content;
@@ -57,9 +63,10 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	JMenuItem addTrackMenuItem;
 	JCheckBoxMenuItem enableTrackMenuItem;
 	JCheckBoxMenuItem showTrackMenuItem;
+	AlgorithmMenuListener algorithmMenuListener;
 	
 
-	public LauraMainWindow(LauraManager main_app, ArrayList<AnchorNode> anchor_list, ArrayList<MobileNode> mobile_list, ArrayList<AccessPoint> access_points_list, ArrayList<UserEquipment> ue_list){
+	public LauraMainWindow(LauraManager main_app, ArrayList<AnchorNode> anchor_list, ArrayList<MobileNode> mobile_list, ArrayList<AccessPoint> access_points_list, ArrayList<UserEquipment> ue_list, ArrayList<BackendAlgorithm> algorithm_list){
 		
 		
 		this.main_app = main_app;
@@ -68,6 +75,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		//GT DEMO
 		this.access_points_list = access_points_list;
 		this.ue_list = ue_list;
+		this.algorithm_list = algorithm_list;
 		//
 		this.setTitle("GreenTouch DEMO");
 		map_panel =  new MapPanel(anchor_list, mobile_list, access_points_list, this);
@@ -90,7 +98,7 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		// create UE info panel
 		ue_panel = new UeInfoPanel(ue_list, this);
 		ue_panel.setVisible(true);
-		
+
 		gtvsep = new GreenTouchVideoStreamingEndpoint();
 		GreenTouchVideoStreamingEndpoint.displayIntoFrame(gtvsep);
 		
@@ -247,6 +255,11 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 		showTrackMenuItem = new JCheckBoxMenuItem("Show Track");
 		showTrackMenuItem.addActionListener(menuListener);
 		viewMenu.add(showTrackMenuItem);
+		
+		//Backend Algorithm Selection
+		algorithmMenu = new JMenu("Algorithm");
+		algorithmMenu.setMnemonic(KeyEvent.VK_A);
+		menubar.add(algorithmMenu);
 		
 		
 		//////////////////////////////////////////////////////////
@@ -513,6 +526,49 @@ public class LauraMainWindow extends JFrame implements ComponentListener{
 	{
 		if(ue_panel != null)
 			ue_panel.update();
+	}
+	
+	public void updateAlgoSelectionMenu()
+	{
+		if(algorithmMenuListener == null)
+			algorithmMenuListener = new AlgorithmMenuListener();
+		
+		// skip update if user is currently interacting with the menu
+		if(algorithmMenu.isPopupMenuVisible())
+			return;
+		
+		// clear
+		this.algorithmMenu.removeAll();
+		// add all available algorithms
+		for (BackendAlgorithm ba : algorithm_list)
+		{
+			JCheckBoxMenuItem i = new JCheckBoxMenuItem(ba.getName());
+			i.addActionListener(algorithmMenuListener);
+			i.setSelected(ba.isSelected());
+			algorithmMenu.add(i);
+		}
+	}
+	
+	class AlgorithmMenuListener implements ActionListener {
+		public void actionPerformed (ActionEvent actionEvent) {
+			System.out.println("New selected backend algorithm: "+ actionEvent.getActionCommand());	
+			try {
+				// send switch command to backend
+				if(LauraManager.g2c_interface.changeBackendAlgorithm(actionEvent.getActionCommand()) < 0)
+					System.err.println("Error: Algorithm change request does not return HTTP 204");
+				// perform direct update
+				LauraManager.g2c_interface.updateBackendAlgorithmList(algorithm_list);
+			} catch (ClientProtocolException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override

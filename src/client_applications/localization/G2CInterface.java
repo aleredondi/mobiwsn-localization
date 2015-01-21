@@ -14,6 +14,7 @@ import org.apache.http.*;
 import org.apache.http.client.*;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
@@ -26,6 +27,7 @@ public class G2CInterface {
 	private String base_url;
 	APChecker ap_checker;
 	UEChecker ue_checker;
+	AlgoChecker algo_checker;
 
 	public G2CInterface(String url){
 		//client_ap = new DefaultHttpClient();
@@ -194,6 +196,56 @@ public class G2CInterface {
 		else
 			return -1;
 	}
+	
+	public void updateBackendAlgorithmList(ArrayList<BackendAlgorithm> algorithm_list) throws ClientProtocolException, IOException, JSONException{
+		HttpClient client_ap;
+		client_ap = new DefaultHttpClient();
+		// algorithm list
+		HttpGet request = new HttpGet(base_url + "/api/algorithm");
+		HttpResponse response = client_ap.execute(request);
+		String json = EntityUtils.toString(response.getEntity());
+		JSONArray algorithms;
+		algorithms = new JSONArray(json);
+		// selected algorithm
+		HttpGet request2 = new HttpGet(base_url + "/api/algorithm/selected");
+		HttpResponse response2 = client_ap.execute(request2);
+		String json2 = EntityUtils.toString(response2.getEntity());
+		JSONObject selected_dict;
+		selected_dict = new JSONObject(json2);
+		String selected = selected_dict.getString("selected");
+			
+		for(int i=0;i<algorithms.length();i++){
+			String name = algorithms.getString(i);
+			// update local algorithm name vector
+			boolean found = false;
+			for(BackendAlgorithm ba : algorithm_list)
+				if(ba.getName().equals(name))
+					found = true;	
+			// create new algorithm instance
+			if(!found)
+				algorithm_list.add(new BackendAlgorithm(name));
+		}
+		
+		// set selected
+		for(BackendAlgorithm ba : algorithm_list)
+			ba.setSelected(ba.getName().equals(selected));
+	}
+	
+	public int changeBackendAlgorithm(String name)  throws ClientProtocolException, IOException, JSONException
+	{
+		HttpClient client_ap;
+		client_ap = new DefaultHttpClient();
+		HttpPut put = new HttpPut(base_url + "/api/algorithm/selected");
+		JSONObject json = new JSONObject();
+		json.put("selected", name);
+		StringEntity input = new StringEntity(json.toString());
+		put.setEntity(input);
+		HttpResponse response = client_ap.execute(put);
+		if(response.getStatusLine().getStatusCode() == 204)
+			return 0;
+		else
+			return -1;
+	}
 
 	public static void main(String[] args) throws ClientProtocolException, IOException, JSONException {
 		HttpClient client = new DefaultHttpClient();
@@ -214,6 +266,10 @@ public class G2CInterface {
 	
 	public void startUEChecker(long period, ArrayList<UserEquipment> ue_list, LauraMainWindow lmw){
 		 ue_checker = new UEChecker(period,ue_list,lmw);
+	}
+	
+	public void startAlgoChecker(long period, ArrayList<BackendAlgorithm> algorithm_list, LauraMainWindow lmw){
+		 algo_checker = new AlgoChecker(period,algorithm_list,lmw);
 	}
 	
 public final class APChecker extends TimerTask{
@@ -273,6 +329,35 @@ public final class UEChecker extends TimerTask{
 			e.printStackTrace();
 		}
 		lmw.updateUeInfoPanel();
+	}
+}
+
+public final class AlgoChecker extends TimerTask{
+	
+	ArrayList<BackendAlgorithm> algorithm_list;
+	LauraMainWindow lmw;
+	
+	public AlgoChecker(long period, ArrayList<BackendAlgorithm> algorithm_list, LauraMainWindow lmw){
+		Timer timer = new Timer();
+		timer.schedule(this, 1000, period);
+		this.algorithm_list = algorithm_list;
+		this.lmw = lmw;
+	}
+	
+	public void run() {
+		try {
+			updateBackendAlgorithmList(algorithm_list);
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		lmw.updateAlgoSelectionMenu();
 	}
 }
 

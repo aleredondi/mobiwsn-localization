@@ -49,7 +49,7 @@ public class LauraManager implements Runnable{
 	static AnchorManager anchor_manager;
 	
 	//GT DEMO
-	static G2CInterface g2c_interface;
+	public static G2CInterface g2c_interface;
 	//
 	
 	FunctionalitySubscriber f_sub;
@@ -67,6 +67,7 @@ public class LauraManager implements Runnable{
 	//GT DEMO
 	public ArrayList<AccessPoint> access_points_list; 
 	public ArrayList<UserEquipment> ue_list;
+	public ArrayList<BackendAlgorithm> algorithm_list;
 	//
 	
 	Random rgen = new Random();
@@ -135,7 +136,7 @@ public class LauraManager implements Runnable{
 			
 			System.out.println("@vigilo@: Connect to RMI: 127.0.0.1");//args[0]);
 			connectToRmi("127.0.0.1"); //args[0]
-			lmw_main = new LauraMainWindow(this,anchor_list,mobile_list,access_points_list, ue_list);
+			lmw_main = new LauraMainWindow(this,anchor_list,mobile_list,access_points_list, ue_list, algorithm_list);
 			lmw_main.setVisible(true);
 	    	lmw_main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    	lmw_main.pack();                        
@@ -147,6 +148,7 @@ public class LauraManager implements Runnable{
 	     	//GT DEMO
 	     	g2c_interface.startAPChecker(2000, access_points_list, lmw_main);
 	     	g2c_interface.startUEChecker(2500, ue_list, lmw_main);
+	     	g2c_interface.startAlgoChecker(2000, algorithm_list, lmw_main);
 	     	//
 
 	     	
@@ -188,6 +190,8 @@ public class LauraManager implements Runnable{
 				access_points_list = g2c_interface.getAccessPoints();
 				ue_list = new ArrayList<UserEquipment>();
 				g2c_interface.updateUeStates(ue_list);
+				algorithm_list = new ArrayList<BackendAlgorithm>();
+				g2c_interface.updateBackendAlgorithmList(algorithm_list);
 			} catch (ParseException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
