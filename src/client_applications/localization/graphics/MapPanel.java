@@ -46,12 +46,14 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 
 	public static final int X_OFFSET = 0;//40;  
 	public static final int Y_OFFSET = 0;//40;
-	private final int NUM_WALLS = 56; 
+	private final int NUM_WALLS = 5; 
 	
-	public static final double SCALE = 1.25;
+	public static final double SCALE = 1;
+	
+	//deib 5 scael 1
 	//laura 57
 	//ale 43
-	//3piano 56
+	//3piano 56 scale 1.25
 	//rfid 53
 	//rfid2 18
 
@@ -102,7 +104,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 
 
 		//this.setPreferredSize(new Dimension(WIDTH*PPM, HEIGHT*PPM));
-		this.setPreferredSize(new Dimension(1040, 740));
+		this.setPreferredSize(new Dimension(906, 852));
 		//3piano 830, 580
 		//rfid 860, 710
 		//rfid2 800, 650
@@ -130,7 +132,7 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 			URL url = getClass().getResource(filename);
 			//System.out.println(url);
 			rule_texture = ImageIO.read(url);
-			filename = "/client_applications/localization/graphics/3_piano_gt_big.jpg";
+			filename = "/client_applications/localization/graphics/conferenze_DEIB.jpg";
 			url = getClass().getResource(filename);
 			map_image = ImageIO.read(url);
 			filename = "/client_applications/localization/graphics/ap_icon_on.png";
@@ -921,20 +923,29 @@ class MapPanel extends JComponent implements MouseListener, MouseMotionListener,
 			walls[1][i].print();
 		}*/
 
-				//MURI 3 PIANO
-				double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
-				double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
-				//double scale = 1.25;
+//				//MURI 3 PIANO
+//				double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
+//				double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
+//				//double scale = 1.25;
+//				
+//				for(int i=0;i<x.length-1;i++){
+//		
+//					walls[0][i] = new Point2D(x[i]*SCALE/PPM,y[i]*SCALE/PPM);
+//					walls[1][i] = new Point2D(x[i+1]*SCALE/PPM, y[i+1]*SCALE/PPM);
+//					//System.out.println("wall " + i);
+//					//System.out.print("start: ");
+//					//walls[0][i].print();
+//					//System.out.print("stop: ");
+//					//walls[1][i].print();
+//				}
 				
-				for(int i=0;i<x.length-1;i++){
-		
+				//MURI SALA DEIB
+				double x[] =  {165, 40, 40, 860, 860, 165};
+				double y[] = {60, 180, 820, 820, 60, 60};
+				
+				for (int i=0;i<x.length-1;i++){
 					walls[0][i] = new Point2D(x[i]*SCALE/PPM,y[i]*SCALE/PPM);
 					walls[1][i] = new Point2D(x[i+1]*SCALE/PPM, y[i+1]*SCALE/PPM);
-					//System.out.println("wall " + i);
-					//System.out.print("start: ");
-					//walls[0][i].print();
-					//System.out.print("stop: ");
-					//walls[1][i].print();
 				}
 
 		//		//MURI RFID LAB	

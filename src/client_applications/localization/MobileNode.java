@@ -24,6 +24,7 @@ import Jama.*;
 
 public class MobileNode extends LauraNode{
 	public int PPM = 25;
+	public static final double SCALE = 1;
 	//dati del nodo
 	
 	//stima col pf
@@ -103,7 +104,7 @@ public class MobileNode extends LauraNode{
 	Random rgen = new Random();
 	
 	//questa sarà da togliere da qua
-	private final int NUM_WALLS = 56;
+	private final int NUM_WALLS = 5;
     //laura 57
     //ale 43
     //3piano 56
@@ -813,19 +814,28 @@ public class MobileNode extends LauraNode{
 			walls[1][i].print();
 		}*/
 		
-		//MURI 3 PIANO
-		double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
-		double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
-
-      for(int i=0;i<x.length-1;i++){
-
-			walls[0][i] = new Point2D(x[i]/PPM,y[i]/PPM);
-			walls[1][i] = new Point2D(x[i+1]/PPM, y[i+1]/PPM);
-			//System.out.println("wall " + i);
-			//System.out.print("start: ");
-			//walls[0][i].print();
-			//System.out.print("stop: ");
-			//walls[1][i].print();
+//		//MURI 3 PIANO
+//		double x[] = { 15, 125, 125, 70, 70, 140    ,140, 465, 465, 530,530,625,625, 805, 805,625, 625,805,805,645,645,625,625,580,580,570,570,540,535,490  , 490,530,530,500,500,530,530,450,450,480,480,440,440,380, 380, 365, 365, 270, 270, 245, 245, 145, 145, 40, 40, 15, 15};
+//		double y[] = {400, 400, 455, 455, 465,465, 400,400, 330 ,330,280,280,100,100, 305,305 , 320,320, 485,485,345,345,410,410,380,380,475,475,370,370 ,400,400,455,455,470,470,560,560,470,470,455,455,560,560,460 ,460 ,560, 560, 460, 460, 560 , 560 ,490, 490, 460, 460, 400  };
+//
+//      for(int i=0;i<x.length-1;i++){
+//
+//			walls[0][i] = new Point2D(x[i]/PPM,y[i]/PPM);
+//			walls[1][i] = new Point2D(x[i+1]/PPM, y[i+1]/PPM);
+//			//System.out.println("wall " + i);
+//			//System.out.print("start: ");
+//			//walls[0][i].print();
+//			//System.out.print("stop: ");
+//			//walls[1][i].print();
+//		}
+      
+		//MURI SALA DEIB
+		double x[] =  {165, 40, 40, 860, 860, 165};
+		double y[] = {60, 180, 820, 820, 60, 60};
+		
+		for (int i=0;i<x.length-1;i++){
+			walls[0][i] = new Point2D(x[i]*SCALE/PPM,y[i]*SCALE/PPM);
+			walls[1][i] = new Point2D(x[i+1]*SCALE/PPM, y[i+1]*SCALE/PPM);
 		}
 		
 //		//MURI RFID LAB	
